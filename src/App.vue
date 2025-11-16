@@ -359,16 +359,16 @@ const toggleDarkMode = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
-  
-  // Apply dark mode class on mount
-  document.documentElement.classList.add('dark');
+
+  // Set initial dark mode state
+  if (isDark.value) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
 
   // Track visitor
   trackVisitor().catch(console.error);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
 });
 
 const navigation = [
