@@ -87,7 +87,7 @@ import Skills from './components/Skills.vue' // Skills from components
 import Profile from './components/Profile.vue' // Profile from components
 
 const scrolled = ref(false)
-const isDark = ref(true)
+const isDark = ref(false)
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50
@@ -105,8 +105,12 @@ const toggleDarkMode = () => {
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 
-  // Set initial dark mode state (default to dark)
-  document.documentElement.classList.add('dark');
+  // Set initial dark mode state
+  if (isDark.value) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
 
   // Track visitor
   trackVisitor().catch(console.error);
