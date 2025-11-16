@@ -1,0 +1,222 @@
+<template>
+  <section class="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900 transition-all duration-300" id="projects">
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16"
+           v-motion
+           :initial="{ y: 50, opacity: 0 }"
+           :visible="{ y: 0, opacity: 1 }">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Highlighted Projects
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Innovative solutions spanning healthcare systems, biometric identification, and secure government applications
+        </p>
+      </div>
+
+      <!-- Featured Projects -->
+      <div class="space-y-16 mb-20">
+        <div v-for="(project, index) in featuredProjects"
+             :key="project.title"
+             class="relative"
+             v-motion
+             :initial="{ y: 80, opacity: 0 }"
+             :visible="{ y: 0, opacity: 1 }"
+             :delay="index * 200">
+          
+          <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 group">
+            <div :class="['grid grid-cols-1 lg:grid-cols-2 gap-0', index % 2 === 1 ? 'lg:grid-flow-col-dense' : '']">
+              
+              <!-- Project Image/Demo -->
+              <div :class="['relative overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 p-8 flex items-center justify-center', index % 2 === 1 ? 'lg:col-start-2' : '']">
+                <div class="relative z-10 text-center">
+                  <div class="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                    <span class="text-3xl">{{ project.icon }}</span>
+                  </div>
+                  <h4 class="text-white text-xl font-bold mb-2">{{ project.category }}</h4>
+                  <div v-if="project.demo" class="mt-4">
+                    <a :href="project.demo" 
+                       target="_blank"
+                       class="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg backdrop-blur-sm transition-all duration-300">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                      </svg>
+                      <span>Live Demo</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-10">
+                  <div class="absolute top-4 left-4 w-32 h-32 border-2 border-white rounded-full"></div>
+                  <div class="absolute bottom-4 right-4 w-24 h-24 border-2 border-white rounded-full"></div>
+                </div>
+              </div>
+
+              <!-- Project Content -->
+              <div :class="['p-8 lg:p-12 flex flex-col justify-center', index % 2 === 1 ? 'lg:col-start-1' : '']">
+                <div class="mb-4">
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    {{ project.title }}
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    {{ project.description }}
+                  </p>
+                </div>
+
+                <!-- Technologies -->
+                <div class="mb-6">
+                  <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span v-for="tech in project.technologies" 
+                          :key="tech"
+                          class="px-3 py-1 text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full border border-purple-200 dark:border-purple-700">
+                      {{ tech }}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="flex items-center space-x-4">
+                  <a v-if="project.link" 
+                     :href="project.link" 
+                     target="_blank"
+                     class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+                    <span>View Project</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Projects Grid -->
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Other Projects</h3>
+        <p class="text-gray-600 dark:text-gray-300">Additional projects and portfolio samples</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div v-for="(project, index) in otherProjects"
+             :key="project.title"
+             class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 dark:border-gray-700 group hover:scale-105"
+             v-motion
+             :initial="{ y: 50, opacity: 0 }"
+             :visible="{ y: 0, opacity: 1 }"
+             :delay="600 + index * 150">
+          
+          <!-- Project Header -->
+          <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {{ project.title }}
+              </h4>
+              <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              {{ project.description }}
+            </p>
+          </div>
+
+          <!-- Project Footer -->
+          <div class="p-6">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500 dark:text-gray-400">{{ project.type }}</span>
+              <a :href="project.link" 
+                 target="_blank"
+                 class="inline-flex items-center space-x-1 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium text-sm transition-colors">
+                <span>View</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Link -->
+      <div class="text-center mt-16"
+           v-motion
+           :initial="{ y: 30, opacity: 0 }"
+           :visible="{ y: 0, opacity: 1 }"
+           :delay="1200">
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          For additional projects and code samples, visit my GitHub
+        </p>
+        <div class="flex justify-center space-x-4">
+          <a href="https://github.com/foomz" 
+             target="_blank"
+             class="inline-flex items-center space-x-2 bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const featuredProjects = ref([
+  {
+    title: 'Advanced Biometric Identification System',
+    category: 'AI & Machine Learning',
+    icon: '🔍',
+    description: 'Engineered a comprehensive biometric identification SaaS integrating facial, fingerprint, and name-based recognition for law enforcement background checks. Enabled rapid, secure, and accurate record retrieval through advanced computer vision and AI-powered data matching.',
+    technologies: ['Django', 'React', 'Vite', 'TypeScript', 'Axios', 'OpenCV', 'Face Recognition', 'NumPy', 'PIL'],
+    link: 'https://frontend-zeta-umber-55.vercel.app/',
+    demo: 'https://frontend-zeta-umber-55.vercel.app/'
+  },
+  {
+    title: 'Integrated Chronic Non-Communicable Disease Registry System (ICNCDRS)',
+    category: 'Healthcare Technology',
+    icon: '🏥',
+    description: 'Developed an AI-driven disease registry system for the Department of Health, centralizing patient management, analytics, and reporting. Integrated Google Gemini AI for intelligent data validation, predictive insights, and automated statistical reporting with comprehensive RBAC and audit trails.',
+    technologies: ['Laravel 12', 'Inertia', 'React', 'MySQL', 'Google Gemini AI', 'RBAC', 'Audit Trail'],
+    link: null
+  },
+  {
+    title: 'Integrated Drug Test Operation and Management Information System (IDTOMIS)',
+    category: 'Government Systems',
+    icon: '🧪',
+    description: 'Developed a comprehensive health information system for the Department of Health to manage drug testing and facility accreditation. Implemented modules for client registry, laboratory workflow, secure data handling, and AI chatbot assistance.',
+    technologies: ['Laravel 12', 'Inertia', 'React', 'TypeScript', 'MySQL', 'AI Chatbot', 'RBAC'],
+    link: null
+  }
+])
+
+const otherProjects = ref([
+  {
+    title: 'OCR Document Tracking',
+    type: 'Document Management',
+    description: 'Centralized document management system with OCR technology, trend analysis, and automated data extraction for efficient operations.',
+    link: 'https://invs-ocr-document-tracking.vercel.app'
+  },
+  {
+    title: 'Human Resource Management',
+    type: 'Enterprise Application',
+    description: 'Full-stack HR management system with employee tracking, attendance, recruiting, onboarding, and payroll management.',
+    link: 'https://human-resource-management-alpha.vercel.app'
+  },
+  {
+    title: 'Network Web Mapper',
+    type: 'Cybersecurity Tool',
+    description: 'Web-based network reconnaissance tool for gathering information on IP addresses and domains using React and Django.',
+    link: 'https://network-web-mapper.vercel.app'
+  },
+  {
+    title: 'Simple Currency App',
+    type: 'Utility Application',
+    description: 'Real-time currency converter application built with Svelte and TypeScript with live exchange rates.',
+    link: 'https://foomz.github.io/simple-current-app/'
+  }
+])
+</script>

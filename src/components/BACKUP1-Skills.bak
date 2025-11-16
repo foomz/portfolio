@@ -1,0 +1,105 @@
+<template>
+	<section class="py-20 px-4 bg-gray-100 dark:bg-gray-900 transition-colors duration-300" id="skills">
+		<div class="max-w-7xl mx-auto">
+			<h2 class="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white"
+					v-motion
+					:initial="{ y: 50, opacity: 0 }"
+					:visible="{ y: 0, opacity: 1 }">
+				Skills
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div v-for="(category, index) in skills"
+						 :key="index"
+						 class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+						 v-motion
+						 :initial="{ y: 50, opacity: 0 }"
+						 :visible="{ y: 0, opacity: 1 }"
+						 :delay="index * 200">
+					<h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">{{ category.title }}</h3>
+					<div class="space-y-2">
+						<div v-for="(subcategory, subIndex) in category.items" 
+								 :key="subIndex"
+								 class="mb-3">
+							<h4 v-if="subcategory.title" class="font-semibold text-blue-600 dark:text-blue-400 mb-2">
+								{{ subcategory.title }}:
+							</h4>
+							<div class="flex flex-wrap gap-2">
+								<span v-for="skill in subcategory.skills" 
+											:key="skill"
+											class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+									{{ skill }}
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>
+
+<script setup>
+const skills = [
+	{
+		title: 'Web Application Development',
+		items: [
+			{
+				title: 'Core Technologies',
+				skills: ['HTML', 'CSS', 'Javascript', 'Typescript', 'PHP', 'SQL', 'Python', 'Git', 'Github', 'Responsive Design']
+			},
+			{
+				title: 'Front-end Frameworks',
+				skills: ['React', 'Vue', 'Next', 'Vite', 'Svelte', 'Tailwind']
+			},
+			{
+				title: 'Back-end Frameworks',
+				skills: ['Node.js', 'Django', 'Sqlite', 'Mysql', 'MSSQL Server', 'REST API']
+			},
+			{
+				title: 'DevOps & Tools',
+				skills: ['Command Line', 'Basic UI/UX', 'Testing', 'Debug', 'Security Practice', 'CI/CD', 'AWS', 'GCP', 'Linode', 'Containerization']
+			}
+		]
+	},
+	{
+		title: 'Cyber Security',
+		items: [
+			{
+				title: 'Core Skills',
+				skills: ['Python', 'Bash', 'Networking', 'Web App Security', 'IDS', 'IPS', 'Firewall', 'Linux']
+			},
+			{
+				title: 'Security Testing',
+				skills: ['SQLI', 'XSS', 'CSRF', 'LFI', 'WAF', 'API EndPoints', 'VAPT']
+			},
+			{
+				title: 'Security Operations',
+				skills: ['Security Tools', 'Analytical Skills', 'Social Engineering', 'OSINT', 'Reconnaissance', 'Malware Analysis']
+			},
+			{
+				title: 'Governance',
+				skills: ['Security Policies', 'Forensics', 'Security Audit', 'Risk Management']
+			}
+		]
+	},
+	{
+		title: 'Administrative Support',
+		items: [
+			{
+				skills: [
+					'Microsoft 365',
+					'Word',
+					'Excel',
+					'PowerPoint',
+					'Google Sheet',
+					'Troubleshooting',
+					'Communication',
+					'Data Entry',
+					'Office Management',
+					'Phone Call'
+				]
+			}
+		]
+	}
+]
+</script>

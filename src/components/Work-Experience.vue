@@ -1,0 +1,507 @@
+<template>
+  <section class="py-20 px-4 relative overflow-hidden" id="experience">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900"></div>
+    
+    <!-- Animated Background Elements -->
+    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+    <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-indigo-300 dark:bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+
+    <div class="relative z-10">
+      <h2 class="text-4xl font-bold mb-16 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+          v-motion
+          :initial="{ y: 50, opacity: 0 }"
+          :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
+        Professional Experience Timeline
+      </h2>
+
+      <!-- Timeline Container -->
+      <div class="max-w-6xl mx-auto relative">
+        <!-- Vertical Timeline Line -->
+        <div class="absolute left-8 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-400 via-blue-500 to-indigo-600"></div>
+
+        <!-- Company Experience Cards -->
+        
+        <!-- Department of Health - Current Position -->
+        <div class="relative flex items-center mb-16"
+             v-motion
+             :initial="{ x: -100, opacity: 0 }"
+             :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 200 } }">
+          
+          <!-- Timeline Dot -->
+          <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10 animate-pulse"></div>
+          
+          <!-- Current Badge -->
+          <div class="absolute left-12 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-bounce">
+            CURRENT POSITION
+          </div>
+
+          <!-- Content Card -->
+          <div class="w-full md:w-5/12 ml-16 md:ml-0 md:mr-8">
+            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
+              <!-- Company Header -->
+              <div class="mb-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">DEPARTMENT OF HEALTH</h3>
+                    <p class="text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Information Systems Analyst III / Full Stack Engineer</p>
+                  </div>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <span class="flex items-center bg-green-100 dark:bg-green-900 px-3 py-1 rounded-full">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Sta Cruz, Manila
+                  </span>
+                  <span class="flex items-center bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                    </svg>
+                    March 2025 – Present
+                  </span>
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-400 italic">eHealth Systems Division, KMITS (Knowledge Management and Information Technology Service)</p>
+              </div>
+
+              <!-- Key Responsibilities -->
+              <div class="mb-6">
+                <h5 class="font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                  <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mr-3"></span>
+                  Key Responsibilities & Achievements
+                </h5>
+                <div class="space-y-3">
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 400 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Designed and operated large-scale AI-driven eHealth systems (ICNCDRS, IDTOMIS, ONEISS and a QR-based Document Tracker) to provide secure CRUD operations, workflow automation, analytics dashboards and operational reporting.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 500 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Architected, developed and optimized RESTful API integrations that enabled secure web application-to-web application communications between DOH devices and partner agencies, regional offices, and health facilities.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 600 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Developed microservice-based architectures with Django REST Framework, Laravel API routes, Next.js API handlers, and Node.js middleware to ensure interoperability across various platforms.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 700 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Created iClinicSys, an LLM-powered application using Django, Next.js, TensorFlow, Keras, and Scikit-Learn for automatic ICD-10/11 code prediction and clinical decision support with Google Gemini AI integration.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 800 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Implemented comprehensive security measures including RBAC, audit trails, JWT authentication, API token systems and encryption protocols (SSL/TLS) to protect distributed application communications.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 900 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Developed automated background services and API consumers to synchronize patient profiles, lab records, facility reports, and statistical indicators across different DOH systems.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Technologies -->
+              <div class="mb-6">
+                <h5 class="font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
+                  <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mr-3"></span>
+                  Technologies & Tools
+                </h5>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Django</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Next.js</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">TensorFlow</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Google Gemini AI</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Laravel</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">REST APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- National Bureau of Investigation - Previous Position -->
+        <div class="relative flex items-center md:flex-row-reverse mb-16"
+             v-motion
+             :initial="{ x: 100, opacity: 0 }"
+             :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 400 } }">
+          
+          <!-- Timeline Dot -->
+          <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
+          
+          <!-- Content Card -->
+          <div class="w-full md:w-5/12 ml-16 md:ml-8 md:mr-0">
+            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
+              <!-- Company Header -->
+              <div class="mb-6">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">NATIONAL BUREAU OF INVESTIGATION</h3>
+                    <p class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">IT Support / Cyber Investigator</p>
+                  </div>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <span class="flex items-center bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Main Building, Manila
+                  </span>
+                  <span class="flex items-center bg-indigo-100 dark:bg-indigo-900 px-3 py-1 rounded-full">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                    </svg>
+                    March 2018 – February 2025
+                  </span>
+                  <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-xs font-medium">
+                    7 Years Experience
+                  </span>
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-400 italic">Started as OJT at Digital Forensics Laboratory, progressed through multiple divisions</p>
+              </div>
+
+              <!-- Career Progression -->
+              <div class="mb-6">
+                <h5 class="font-semibold text-gray-800 dark:text-white mb-4 flex items-center">
+                  <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3"></span>
+                  Career Progression & Key Achievements
+                </h5>
+                <div class="space-y-3">
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 600 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Started as OJT at NBI Digital Forensics Laboratory performing forensic imaging, evidence extraction, and technical documentation for court proceedings with 100% evidence chain custody.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 700 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Progressed through Cybercrime Division conducting cyber incident investigations, data breach assessments, and digital evidence validation for criminal cases.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 800 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Maintained NBI Clearance Biometric Platform in Technology Infrastructure Division ensuring 99.9% uptime and data integrity for nationwide operations.</span>
+                  </div>
+                  
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 900 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Managed data center infrastructure and provided technical support for regional offices while strengthening IT security through network diagnostics and system monitoring.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Departments Timeline -->
+              <div class="mb-6">
+                <h5 class="font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
+                  <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3"></span>
+                  Department Assignments
+                </h5>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <span class="font-medium text-gray-800 dark:text-white">Regional District Offices</span>
+                    <span class="text-blue-600 dark:text-blue-400">Mar 2024 - Dec 2024</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <span class="font-medium text-gray-800 dark:text-white">Technology Infrastructure Division</span>
+                    <span class="text-blue-600 dark:text-blue-400">Oct 2022 - Feb 2024</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <span class="font-medium text-gray-800 dark:text-white">Cybercrime Division</span>
+                    <span class="text-blue-600 dark:text-blue-400">Jul 2018 - Sep 2022</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <span class="font-medium text-gray-800 dark:text-white">Digital Forensics Laboratory</span>
+                    <span class="text-blue-600 dark:text-blue-400">Mar 2018 - Jun 2018</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Technologies -->
+              <div class="mb-6">
+                <h5 class="font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
+                  <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3"></span>
+                  Specializations
+                </h5>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-700">Digital Forensics</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-700">Cybercrime Investigation</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-700">Network Security</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-700">System Administration</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 text-blue-800 dark:text-blue-200 rounded-full border border-blue-200 dark:border-blue-700">Evidence Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- Project Galleries Section -->
+        <div class="mt-16">
+          <h3 class="text-2xl font-bold text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-12"
+              v-motion
+              :initial="{ y: 30, opacity: 0 }"
+              :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 600 } }">
+            Project Documentation & Evidence Gallery
+          </h3>
+          
+          <div v-for="(position, index) in experience"
+               :key="index"
+               class="mb-12"
+               v-motion
+               :initial="{ y: 50, opacity: 0 }"
+               :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 700 + (index * 200) } }">
+            
+            <div class="mb-6">
+              <h4 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">{{ position.department }}</h4>
+              <p class="text-gray-600 dark:text-gray-400">{{ position.period }}</p>
+            </div>
+
+            
+            <!-- Photo Gallery -->
+            <div v-if="position.photos && position.photos.length > 0" 
+                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div v-for="(photo, photoIndex) in position.photos" 
+                   :key="photoIndex"
+                   class="relative group overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                   v-motion
+                   :initial="{ scale: 0.8, opacity: 0 }"
+                   :visible="{ scale: 1, opacity: 1, transition: { duration: 600, delay: 800 + (photoIndex * 150) } }">
+                <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                  <img :src="photo.url" 
+                       :alt="photo.description" 
+                       class="w-full h-48 object-cover transform transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div class="p-4 text-white w-full">
+                    <p class="font-semibold text-sm mb-1">{{ photo.description }}</p>
+                    <div class="w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                  </div>
+                </div>
+                <!-- Photo Icon Overlay -->
+                <div class="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+const experience = [
+  {
+    department: 'Regional District Offices – Investigative Services',
+    period: 'March 2024 – December 2024',
+    duties: [
+      'Provided administrative support for NBI operations, including data entry, filing, and handling sensitive correspondence.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/ks93sdSH/bdcd22a8-0b39-4ca4-8ce5-ddeae2f26d35.jpg',
+        description: 'Build OCR Entries'
+      },
+      {
+        url: 'https://i.ibb.co/gZ3zwqRN/88a35e3f-7f81-495c-a675-f4d43145f1a8.jpg',
+        description: 'Assistant Director for Regional Operations Service'
+      }
+    ]
+  },
+  {
+    department: 'Technology Infrastructure Division – Information and Communication Technology Services',
+    period: 'October 2022 – February 2024',
+    duties: [
+      'Monitored and maintained the hardware, software, and network infrastructure of the data center to ensure optimal performance and reliability for NBI Clearance Biometric System.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/rfHtmhgz/IMG-20221128-094301.jpg',
+        description: 'Data center'
+      },
+      {
+        url: 'https://i.ibb.co/35dNFk1M/IMG-20221214-205851.jpg',
+        description: 'Monitoring'
+      },
+      {
+        url: 'https://i.ibb.co/zhBYZJ8s/IMG-20230510-170511.jpg',
+        description: 'Hybrid Server'
+      }
+    ]
+  },
+  {
+    department: 'Cybercrime Division – Investigative Services',
+    period: 'July 2018 – September 2022',
+    duties: [
+      'Conducted detailed investigations into cybercrime incidents, including data breaches, hacking attempts, and online fraud, while preparing comprehensive reports and documentation of investigative findings for use in legal proceedings.',
+      'Identified patterns and trends in cybercrime activities to aid in the development of proactive security measures and stayed updated on the latest cyber threats, attack vectors, and security vulnerabilities.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/VcX5PzSD/IMG-20200120-211120.jpg',
+        description: 'HackRF One on Rasberry Pi - Simple IMSI Catcher Experiment'
+      },
+      {
+        url: 'https://i.ibb.co/FLwwbWhB/IMG-20200123-184210.jpg',
+        description: 'Drone'
+      },
+      {
+        url: 'https://i.ibb.co/zWt8RNQ4/IMG-20200311-220315.jpg',
+        description: 'Investigation Custody'
+      }
+    ]
+  },
+  {
+    department: 'Digital Forensics Laboratory – Forensic Investigation Services',
+    period: 'March 2018 – June 2018',
+    duties: [
+      'Utilized advanced forensic tools and techniques to collect, preserve, and analyze digital evidence after operations, which was subsequently used in court hearings.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/jvYKNVdg/IMG-20210818-203044.jpg',
+        description: 'Forensic Analysis'
+      },
+      {
+        url: 'https://i.ibb.co/gZQdZP2w/IMG-20230710-073704.jpg',
+        description: 'Mobile Forensic'
+      },
+      {
+        url: 'https://i.ibb.co/nNN3j4Kz/IMG-20220711-160527.jpg',
+        description: 'Forensic Imaging'
+      }
+    ]
+  }
+]
+</script>
+
+<style scoped>
+/* Animation delays for staggered effects */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom shadow for enhanced depth */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Smooth hover transitions */
+.hover\:shadow-3xl:hover {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Timeline line gradient enhancement */
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, 
+    rgba(168, 85, 247, 0.8) 0%, 
+    rgba(59, 130, 246, 0.8) 50%, 
+    rgba(79, 70, 229, 0.8) 100%);
+}
+
+/* Backdrop blur enhancement */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Enhanced pulse animation */
+@keyframes enhanced-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: enhanced-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bounce animation for current position badge */
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+/* Aspect ratio utility */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(12 / 16 * 100%);
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+</style>

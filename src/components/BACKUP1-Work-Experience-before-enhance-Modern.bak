@@ -1,0 +1,231 @@
+<template>
+  <section class="py-20 px-4 bg-white dark:bg-gray-800 transition-colors duration-300" id="experience">
+    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white"
+        v-motion
+        :initial="{ y: 50, opacity: 0 }"
+        :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
+      Work Experience
+    </h2>
+    <div class="max-w-7xl mx-auto space-y-12">
+      <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-md"
+           v-motion
+           :initial="{ scale: 0.8, opacity: 0 }"
+           :visible="{ scale: 1, opacity: 1, transition: { duration: 1000 } }">
+        <div class="mb-6"
+             v-motion
+             :initial="{ x: -50, opacity: 0 }"
+             :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 200 } }">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">NATIONAL BUREAU OF INVESTIGATION</h3>
+          <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Project Worker - Job Order</h4>
+        </div>
+
+        <div class="space-y-8">
+          <div v-for="(position, index) in experience"
+               :key="index"
+               class="transform transition-all duration-500"
+               v-motion
+               :initial="{ x: index % 2 === 0 ? -100 : 100, opacity: 0 }"
+               :visible="{ 
+                 x: 0, 
+                 opacity: 1, 
+                 transition: { 
+                   duration: 800, 
+                   delay: 300 + (index * 200) 
+                 } 
+               }">
+            <div class="mb-4 hover:translate-x-2 transition-transform duration-300">
+              <p class="text-gray-700 dark:text-gray-300 text-lg mb-1">{{ position.department }}</p>
+              <p class="text-blue-600 dark:text-blue-400">{{ position.period }}</p>
+            </div>
+
+            <div class="space-y-3">
+              <p v-for="(duty, dutyIndex) in position.duties" 
+                 :key="dutyIndex"
+                 class="text-gray-700 dark:text-gray-300 leading-relaxed pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-blue-600 dark:before:text-blue-400"
+                 v-motion
+                 :initial="{ y: 20, opacity: 0 }"
+                 :visible="{ 
+                   y: 0, 
+                   opacity: 1, 
+                   transition: { 
+                     duration: 600, 
+                     delay: 400 + (index * 200) + (dutyIndex * 100) 
+                   } 
+                 }">
+                {{ duty }}
+            </p>
+          </div>
+
+          <div v-if="position.department.includes('Regional District Offices')" 
+               class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+               v-motion
+               :initial="{ y: 50, opacity: 0 }"
+               :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
+            <div v-for="(photo, photoIndex) in position.photos" 
+                 :key="photoIndex"
+                 class="relative group overflow-hidden rounded-lg shadow-lg"
+                 v-motion
+                 :initial="{ scale: 0.9, opacity: 0 }"
+                 :visible="{ scale: 1, opacity: 1 }"
+                 :delay="photoIndex * 200">
+              <img :src="photo.url" 
+                   :alt="photo.description" 
+                   class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p class="text-white text-center px-4">{{ photo.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div v-if="position.department.includes('Technology Infrastructure Division')" 
+               class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+               v-motion
+               :initial="{ y: 50, opacity: 0 }"
+               :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
+            <div v-for="(photo, photoIndex) in position.photos" 
+                 :key="photoIndex"
+                 class="relative group overflow-hidden rounded-lg shadow-lg"
+                 v-motion
+                 :initial="{ scale: 0.9, opacity: 0 }"
+                 :visible="{ scale: 1, opacity: 1 }"
+                 :delay="photoIndex * 200">
+              <img :src="photo.url" 
+                   :alt="photo.description" 
+                   class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p class="text-white text-center px-4">{{ photo.description }}</p>
+              </div>
+            </div>
+          </div>
+          <!-- Photo Gallery for Cybercrime Division -->
+          <div v-if="position.department.includes('Cybercrime Division')" 
+               class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+               v-motion
+               :initial="{ y: 50, opacity: 0 }"
+               :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
+            <div v-for="(photo, photoIndex) in position.photos" 
+                 :key="photoIndex"
+                 class="relative group overflow-hidden rounded-lg shadow-lg"
+                 v-motion
+                 :initial="{ scale: 0.9, opacity: 0 }"
+                 :visible="{ scale: 1, opacity: 1 }"
+                 :delay="photoIndex * 200">
+              <img :src="photo.url" 
+                   :alt="photo.description" 
+                   class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p class="text-white text-center px-4">{{ photo.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div v-if="position.department.includes('Digital Forensics Laboratory')" 
+               class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+               v-motion
+               :initial="{ y: 50, opacity: 0 }"
+               :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
+            <div v-for="(photo, photoIndex) in position.photos" 
+                 :key="photoIndex"
+                 class="relative group overflow-hidden rounded-lg shadow-lg"
+                 v-motion
+                 :initial="{ scale: 0.9, opacity: 0 }"
+                 :visible="{ scale: 1, opacity: 1 }"
+                 :delay="photoIndex * 200">
+              <img :src="photo.url" 
+                   :alt="photo.description" 
+                   class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <p class="text-white text-center px-4">{{ photo.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+const experience = [
+  {
+    department: 'Regional District Offices – Investigative Services',
+    period: 'March 2024 – December 2024',
+    duties: [
+      'Provided administrative support for NBI operations, including data entry, filing, and handling sensitive correspondence.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/ks93sdSH/bdcd22a8-0b39-4ca4-8ce5-ddeae2f26d35.jpg',
+        description: 'Build OCR Entries'
+      },
+      {
+        url: 'https://i.ibb.co/gZ3zwqRN/88a35e3f-7f81-495c-a675-f4d43145f1a8.jpg',
+        description: 'Assistant Director for Regional Operations Service'
+      }
+    ]
+  },
+  {
+    department: 'Technology Infrastructure Division – Information and Communication Technology Services',
+    period: 'October 2022 – February 2024',
+    duties: [
+      'Monitored and maintained the hardware, software, and network infrastructure of the data center to ensure optimal performance and reliability for NBI Clearance Biometric System.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/rfHtmhgz/IMG-20221128-094301.jpg',
+        description: 'Data center'
+      },
+      {
+        url: 'https://i.ibb.co/35dNFk1M/IMG-20221214-205851.jpg',
+        description: 'Monitoring'
+      },
+      {
+        url: 'https://i.ibb.co/zhBYZJ8s/IMG-20230510-170511.jpg',
+        description: 'Hybrid Server'
+      }
+    ]
+  },
+  {
+    department: 'Cybercrime Division – Investigative Services',
+    period: 'July 2018 – September 2022',
+    duties: [
+      'Conducted detailed investigations into cybercrime incidents, including data breaches, hacking attempts, and online fraud, while preparing comprehensive reports and documentation of investigative findings for use in legal proceedings.',
+      'Identified patterns and trends in cybercrime activities to aid in the development of proactive security measures and stayed updated on the latest cyber threats, attack vectors, and security vulnerabilities.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/VcX5PzSD/IMG-20200120-211120.jpg',
+        description: 'HackRF One on Rasberry Pi - Simple IMSI Catcher Experiment'
+      },
+      {
+        url: 'https://i.ibb.co/FLwwbWhB/IMG-20200123-184210.jpg',
+        description: 'Drone'
+      },
+      {
+        url: 'https://i.ibb.co/zWt8RNQ4/IMG-20200311-220315.jpg',
+        description: 'Investigation Custody'
+      }
+    ]
+  },
+  {
+    department: 'Digital Forensics Laboratory – Forensic Investigation Services',
+    period: 'March 2018 – June 2018',
+    duties: [
+      'Utilized advanced forensic tools and techniques to collect, preserve, and analyze digital evidence after operations, which was subsequently used in court hearings.'
+    ],
+    photos: [
+      {
+        url: 'https://i.ibb.co/jvYKNVdg/IMG-20210818-203044.jpg',
+        description: 'Forensic Analysis'
+      },
+      {
+        url: 'https://i.ibb.co/gZQdZP2w/IMG-20230710-073704.jpg',
+        description: 'Mobile Forensic'
+      },
+      {
+        url: 'https://i.ibb.co/nNN3j4Kz/IMG-20220711-160527.jpg',
+        description: 'Forensic Imaging'
+      }
+    ]
+  }
+]
+</script>
