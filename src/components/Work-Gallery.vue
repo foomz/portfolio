@@ -1,0 +1,158 @@
+<template>
+  <section class="mt-16 max-w-6xl mx-auto px-4" id="work-gallery">
+    <h3 class="text-2xl font-bold text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-12"
+        v-motion
+        :initial="{ y: 30, opacity: 0 }"
+        :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 600 } }">
+      Experienced Gallery
+    </h3>
+    <div v-for="(position, index) in experience"
+         :key="index"
+         class="mb-12"
+         v-motion
+         :initial="{ y: 50, opacity: 0 }"
+         :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 700 + (index * 200) } }">
+      <div class="mb-6">
+        <h4 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">{{ position.department }}</h4>
+        <p class="text-gray-600 dark:text-gray-400">{{ position.period }}</p>
+      </div>
+      <!-- Photo Gallery -->
+      <div v-if="position.photos && position.photos.length > 0" 
+           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-for="(photo, photoIndex) in position.photos" 
+             :key="photoIndex"
+             class="relative group overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+             v-motion
+             :initial="{ scale: 0.8, opacity: 0 }"
+             :visible="{ scale: 1, opacity: 1, transition: { duration: 600, delay: 800 + (photoIndex * 150) } }">
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <img :src="photo.url" 
+                 :alt="photo.description" 
+                 class="w-full h-48 object-cover transform transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+            <div class="p-4 text-white w-full">
+              <p class="font-semibold text-sm mb-1">{{ photo.description }}</p>
+              <div class="w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+            </div>
+          </div>
+          <!-- Photo Icon Overlay -->
+          <div class="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const experience = ref([
+{
+    department: 'HL7 FHIR & Immunization Connectathon - Knowledge Management and Information Technology Service',
+    period: 'June 2025',
+    photos: [
+        {
+            url: 'https://i.ibb.co/zWfkGw33/Fhir2.jpg',
+            description: 'FHIR Implementation Workshop'
+        },
+        {
+            url: 'https://i.ibb.co/VWmLXmGw/Connectathon2.jpg',
+            description: 'Healthcare Interoperability Testing'
+        },
+        {
+            url: 'https://i.ibb.co/pjbSj29Q/Fhir.jpg',
+            description: 'Data Exchange Standards'
+        },
+        {
+            url: 'https://i.ibb.co/GQtVfgLC/Me.jpg',
+            description: 'API Integration Session'
+        },
+        {
+            url: 'https://i.ibb.co/TxHrqD66/Fhir1.jpg',
+            description: 'Clinical Data Modeling'
+        },
+        {
+            url: 'https://i.ibb.co/XkX6Tx90/Connectathon.jpg',
+            description: 'Collaborative Development'
+        }
+    ]
+},
+  {
+    department: 'Regional District Offices – Investigative Services',
+    period: 'March 2024 – December 2024',
+    photos: [
+      {
+        url: 'https://i.ibb.co/ks93sdSH/bdcd22a8-0b39-4ca4-8ce5-ddeae2f26d35.jpg',
+        description: 'Build OCR Entries'
+      },
+      {
+        url: 'https://i.ibb.co/gZ3zwqRN/88a35e3f-7f81-495c-a675-f4d43145f1a8.jpg',
+        description: 'Assistant Director for Regional Operations Service'
+      }
+    ]
+  },
+  {
+    department: 'Technology Infrastructure Division – Information and Communication Technology Services',
+    period: 'October 2022 – February 2024',
+    photos: [
+      {
+        url: 'https://i.ibb.co/rfHtmhgz/IMG-20221128-094301.jpg',
+        description: 'Data center'
+      },
+      {
+        url: 'https://i.ibb.co/35dNFk1M/IMG-20221214-205851.jpg',
+        description: 'Monitoring'
+      },
+      {
+        url: 'https://i.ibb.co/zhBYZJ8s/IMG-20230510-170511.jpg',
+        description: 'Hybrid Server'
+      }
+    ]
+  },
+  {
+    department: 'Cybercrime Division – Investigative Services',
+    period: 'July 2018 – September 2022',
+    photos: [
+      {
+        url: 'https://i.ibb.co/VcX5PzSD/IMG-20200120-211120.jpg',
+        description: 'HackRF One on Rasberry Pi - Simple IMSI Catcher Experiment'
+      },
+      {
+        url: 'https://i.ibb.co/FLwwbWhB/IMG-20200123-184210.jpg',
+        description: 'Drone'
+      },
+      {
+        url: 'https://i.ibb.co/zWt8RNQ4/IMG-20200311-220315.jpg',
+        description: 'Investigation Custody'
+      }
+    ]
+  },
+  {
+    department: 'Digital Forensics Laboratory – Forensic Investigation Services',
+    period: 'March 2018 – June 2018',
+    photos: [
+      {
+        url: 'https://i.ibb.co/jvYKNVdg/IMG-20210818-203044.jpg',
+        description: 'Forensic Analysis'
+      },
+      {
+        url: 'https://i.ibb.co/gZQdZP2w/IMG-20230710-073704.jpg',
+        description: 'Mobile Forensic'
+      },
+      {
+        url: 'https://i.ibb.co/nNN3j4Kz/IMG-20220711-160527.jpg',
+        description: 'Forensic Imaging'
+      }
+    ]
+  }
+])
+</script>
+
+<style scoped>
+/* Add any custom styles if needed */
+</style>

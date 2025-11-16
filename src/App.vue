@@ -34,6 +34,8 @@
         <!-- Experience Section -->
       <WorkExperience /> <!-- Render the Work Experience Component with experience prop -->
 
+      <WorkGallery /> <!-- Render the Work Gallery Component -->
+
       <!-- Skills Section -->
       <Skills /> <!-- Render the Skills Component -->
 
@@ -79,6 +81,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { EnvelopeIcon, SunIcon, MoonIcon } from '@heroicons/vue/24/outline' // Importing icons
 import { trackVisitor } from './utils/geolocation' // Importing geolocation tracking utility
 import WorkExperience from './components/Work-Experience.vue' // Experience for work-experiences from components
+import WorkGallery from './components/Work-Gallery.vue' // Work Gallery from components
 import Projects from './components/Projects.vue' // Projects from components
 import Skills from './components/Skills.vue' // Skills from components
 import Profile from './components/Profile.vue' // Profile from components

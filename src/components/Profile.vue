@@ -35,12 +35,18 @@
 
         <!-- Name and Title -->
         <div class="space-y-4 mb-8">
-          <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
-            Johnray M. De Luna
-          </h1>
+          <TypeWriter
+            :texts="['Johnray M. De Luna']"
+            tag="h1"
+            class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight"
+          />
           <div class="space-y-2">
-            <p class="text-2xl md:text-3xl font-semibold text-blue-200">Full Stack Engineer & DevOps Professional</p>
-            <p class="text-lg text-gray-300">5+ Years Experience in Government Systems & AI Solutions</p>
+            <TypeWriter
+              :texts="['Full Stack Engineer & DevOps Professional', '5+ Years Experience in Government Systems & AI Solutions']"
+              tag="p"
+              class="text-2xl md:text-3xl font-semibold text-blue-200"
+              :repeat="false"
+            />
           </div>
         </div>
 
@@ -129,6 +135,7 @@
 <script setup>
 import { ref } from 'vue'
 import { EnvelopeIcon } from '@heroicons/vue/24/outline'
+import TypeWriter from './ui/TypeWriter.vue'
 
 const highlights = ref([
   {
