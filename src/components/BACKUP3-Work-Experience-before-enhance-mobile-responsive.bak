@@ -1,15 +1,15 @@
 <template>
-  <section class="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" id="experience">
+  <section class="py-20 px-4 relative overflow-hidden" id="experience">
     <!-- Gradient Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900"></div>
     
     <!-- Animated Background Elements -->
-    <div class="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-    <div class="absolute top-1/3 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-    <div class="absolute bottom-1/4 left-1/3 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-indigo-300 dark:bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+    <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-indigo-300 dark:bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
 
     <div class="relative z-10">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 sm:mb-12 lg:mb-16 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent px-4 sm:px-0"
+      <h2 class="text-4xl font-bold mb-16 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
           v-motion
           :initial="{ y: 50, opacity: 0 }"
           :visible="{ y: 0, opacity: 1, transition: { duration: 800 } }">
@@ -17,40 +17,40 @@
       </h2>
 
       <!-- Timeline Container -->
-      <div class="max-w-6xl mx-auto relative px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto relative">
         <!-- Vertical Timeline Line -->
-        <div class="absolute left-6 sm:left-8 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-400 via-blue-500 to-indigo-600"></div>
+        <div class="absolute left-8 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-400 via-blue-500 to-indigo-600"></div>
 
         <!-- Company Experience Cards -->
         
         <!-- Department of Health - Current Position -->
-        <div class="relative flex items-center mb-8 sm:mb-12 lg:mb-16"
+        <div class="relative flex items-center mb-16"
              v-motion
              :initial="{ x: -100, opacity: 0 }"
              :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 200 } }">
           
           <!-- Timeline Dot -->
-          <div class="absolute left-6 sm:left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full border-2 sm:border-4 border-white dark:border-gray-800 shadow-lg z-10 animate-pulse"></div>
+          <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10 animate-pulse"></div>
           
           <!-- Current Badge -->
-          <div class="absolute left-10 sm:left-12 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg animate-bounce">
-            CURRENT
+          <div class="absolute left-12 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-bounce">
+            CURRENT POSITION
           </div>
 
           <!-- Content Card -->
-          <div class="w-full md:w-5/12 ml-12 sm:ml-16 md:ml-0 md:mr-8">
-            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
+          <div class="w-full md:w-5/12 ml-16 md:ml-0 md:mr-8">
+            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
               <!-- Company Header -->
               <div class="mb-6">
                 <div class="flex items-center mb-4">
-                  <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
                     </svg>
                   </div>
-                  <div class="min-w-0 flex-1">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white leading-tight">DEPARTMENT OF HEALTH</h3>
-                    <p class="text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent leading-tight">Information Systems Analyst III / Full Stack Engineer</p>
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">DEPARTMENT OF HEALTH</h3>
+                    <p class="text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Information Systems Analyst III / Full Stack Engineer</p>
                   </div>
                 </div>
                 
@@ -149,28 +149,28 @@
         </div>
         
         <!-- National Bureau of Investigation - Previous Position -->
-        <div class="relative flex items-center md:flex-row-reverse mb-8 sm:mb-12 lg:mb-16"
+        <div class="relative flex items-center md:flex-row-reverse mb-16"
              v-motion
              :initial="{ x: 100, opacity: 0 }"
              :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 400 } }">
           
           <!-- Timeline Dot -->
-          <div class="absolute left-6 sm:left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full border-2 sm:border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
+          <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
           
           <!-- Content Card -->
-          <div class="w-full md:w-5/12 ml-12 sm:ml-16 md:ml-8 md:mr-0">
-            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
+          <div class="w-full md:w-5/12 ml-16 md:ml-8 md:mr-0">
+            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
               <!-- Company Header -->
               <div class="mb-6">
                 <div class="flex items-center mb-4">
-                  <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                     </svg>
                   </div>
-                  <div class="min-w-0 flex-1">
-                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white leading-tight">NATIONAL BUREAU OF INVESTIGATION</h3>
-                    <p class="text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">IT Support / Cyber Investigator</p>
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">NATIONAL BUREAU OF INVESTIGATION</h3>
+                    <p class="text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">IT Support / Cyber Investigator</p>
                   </div>
                 </div>
                 
@@ -243,21 +243,21 @@
                   Department Assignments
                 </h5>
                 <div class="space-y-2 text-sm">
-                  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg gap-1 sm:gap-0">
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <span class="font-medium text-gray-800 dark:text-white">Regional District Offices</span>
-                    <span class="text-blue-600 dark:text-blue-400 text-xs sm:text-sm">Mar 2024 - Dec 2024</span>
+                    <span class="text-blue-600 dark:text-blue-400">Mar 2024 - Dec 2024</span>
                   </div>
-                  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg gap-1 sm:gap-0">
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <span class="font-medium text-gray-800 dark:text-white">Technology Infrastructure Division</span>
-                    <span class="text-blue-600 dark:text-blue-400 text-xs sm:text-sm">Oct 2022 - Feb 2024</span>
+                    <span class="text-blue-600 dark:text-blue-400">Oct 2022 - Feb 2024</span>
                   </div>
-                  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg gap-1 sm:gap-0">
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <span class="font-medium text-gray-800 dark:text-white">Cybercrime Division</span>
-                    <span class="text-blue-600 dark:text-blue-400 text-xs sm:text-sm">Jul 2018 - Sep 2022</span>
+                    <span class="text-blue-600 dark:text-blue-400">Jul 2018 - Sep 2022</span>
                   </div>
-                  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg gap-1 sm:gap-0">
+                  <div class="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
                     <span class="font-medium text-gray-800 dark:text-white">Digital Forensics Laboratory</span>
-                    <span class="text-blue-600 dark:text-blue-400 text-xs sm:text-sm">Mar 2018 - Jun 2018</span>
+                    <span class="text-blue-600 dark:text-blue-400">Mar 2018 - Jun 2018</span>
                   </div>
                 </div>
               </div>

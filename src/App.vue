@@ -17,12 +17,11 @@
               <SunIcon v-if="isDark" class="h-6 w-6 text-yellow-500" />
               <MoonIcon v-else class="h-6 w-6 text-gray-600" />
             </button>
-            <a v-for="item in navigation" 
-               :key="item.name" 
-               :href="item.href" 
-               class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
-              {{ item.name }}
-            </a>
+            <a href="#profile" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Profile</a>
+            <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Work Experience</a>
+            <a href="#gallery" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Work Gallery</a>
+            <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Skills</a>
+            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Projects</a>
           </div>
           <!-- Mobile Hamburger -->
           <div class="md:hidden flex items-center">
@@ -45,13 +44,11 @@
                 <SunIcon v-if="isDark" class="h-6 w-6 text-yellow-500" />
                 <MoonIcon v-else class="h-6 w-6 text-gray-600" />
               </button>
-              <a v-for="item in navigation" 
-                 :key="item.name" 
-                 :href="item.href" 
-                 class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
-                 @click="mobileMenuOpen = false">
-                {{ item.name }}
-              </a>
+              <a href="#profile" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Profile</a>
+              <a href="#experience" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Work Experience</a>
+              <a href="#gallery" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Work Gallery</a>
+              <a href="#skills" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Skills</a>
+              <a href="#projects" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Projects</a>
             </div>
           </div>
         </transition>
@@ -60,18 +57,28 @@
 
     <main class="pt-16">
         <!-- Hero Profile Section -->
-        <Profile /> <!-- Render the Profile Component -->
+        <section id="profile">
+          <Profile /> <!-- Render the Profile Component -->
+        </section>
 
         <!-- Experience Section -->
-      <WorkExperience /> <!-- Render the Work Experience Component with experience prop -->
+        <section id="experience">
+          <WorkExperience /> <!-- Render the Work Experience Component with experience prop -->
+        </section>
 
-      <WorkGallery /> <!-- Render the Work Gallery Component -->
+        <section id="gallery">
+          <WorkGallery /> <!-- Render the Work Gallery Component -->
+        </section>
 
-      <!-- Skills Section -->
-      <Skills /> <!-- Render the Skills Component -->
+        <!-- Skills Section -->
+        <section id="skills">
+          <Skills /> <!-- Render the Skills Component -->
+        </section>
 
-      <!-- Projects Section -->
-      <Projects /> <!-- Render the Projects Component -->
+        <!-- Projects Section -->
+        <section id="projects">
+          <Projects /> <!-- Render the Projects Component -->
+        </section>
     </main>
 
     <!-- Footer -->

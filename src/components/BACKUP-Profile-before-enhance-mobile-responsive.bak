@@ -10,9 +10,9 @@
     </div>
 
     <!-- Main Content -->
-    <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
       <!-- Profile Section -->
-      <div class="mb-8 sm:mb-12 lg:mb-16"
+      <div class="mb-16"
            v-motion
            :initial="{ y: 100, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }"
@@ -124,8 +124,8 @@
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
