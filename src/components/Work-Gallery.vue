@@ -52,7 +52,29 @@
 import { ref } from 'vue'
 
 const experience = ref([
-{
+  {
+    department: 'HL7 FHIR RoadSafety Connectathon - Knowledge Management and Information Technology Service',
+    period: 'November 2025',
+    photos: [
+        {
+            url: 'https://i.ibb.co/m5rFXz4Z/1.jpg',
+            description: 'FHIR Implementation Workshop'
+        },
+        {
+            url: 'https://i.ibb.co/g8VmjZd/4.jpg',
+            description: 'Healthcare Interoperability Testing'
+        },
+        {
+            url: 'https://i.ibb.co/vnwfQPR/3.jpg',
+            description: 'Data Exchange Standards'
+        },
+        {
+            url: 'https://i.ibb.co/4wHqwt3F/2.jpg',
+            description: 'API Integration Session'
+        }
+    ]
+  },
+  {
     department: 'HL7 FHIR & Immunization Connectathon - Knowledge Management and Information Technology Service',
     period: 'June 2025',
     photos: [
@@ -81,7 +103,7 @@ const experience = ref([
             description: 'Collaborative Development'
         }
     ]
-},
+  },
   {
     department: 'Regional District Offices – Investigative Services',
     period: 'March 2024 – December 2024',
