@@ -5,13 +5,12 @@
          :class="{ 'py-2': scrolled }" 
          ref="navbar">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between h-16 items-center">
+        <div class="flex justify-between h-16">
           <div class="flex items-center space-x-2">
             <img src="https://i.imgur.com/Ap9Seoc.png" alt="Profile" class="h-10 w-10 rounded-full object-cover">
             <h1 class="text-xl font-bold dark:text-white">Portfolio</h1>
           </div>
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-4">
+          <div class="flex items-center space-x-4">
             <button @click="toggleDarkMode" 
                     class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
               <SunIcon v-if="isDark" class="h-6 w-6 text-yellow-500" />
@@ -24,37 +23,7 @@
               {{ item.name }}
             </a>
           </div>
-          <!-- Mobile Hamburger -->
-          <div class="md:hidden flex items-center">
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-              <svg v-if="!mobileMenuOpen" class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg v-else class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
         </div>
-        <!-- Mobile Menu -->
-        <transition name="fade">
-          <div v-if="mobileMenuOpen" class="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-20">
-            <div class="flex flex-col items-center py-4 space-y-2">
-              <button @click="toggleDarkMode" 
-                      class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 mb-2">
-                <SunIcon v-if="isDark" class="h-6 w-6 text-yellow-500" />
-                <MoonIcon v-else class="h-6 w-6 text-gray-600" />
-              </button>
-              <a v-for="item in navigation" 
-                 :key="item.name" 
-                 :href="item.href" 
-                 class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
-                 @click="mobileMenuOpen = false">
-                {{ item.name }}
-              </a>
-            </div>
-          </div>
-        </transition>
       </div>
     </nav>
 
@@ -109,8 +78,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-// Mobile menu state
-const mobileMenuOpen = ref(false)
 import { EnvelopeIcon, SunIcon, MoonIcon } from '@heroicons/vue/24/outline' // Importing icons
 import { trackVisitor } from './utils/geolocation' // Importing geolocation tracking utility
 import WorkExperience from './components/Work-Experience.vue' // Experience for work-experiences from components
