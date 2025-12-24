@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-200 dark:bg-gray-900 transition-colors duration-300">
     <!-- Navigation with scroll effect -->
-    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-10 transition-all duration-300" 
-         :class="{ 'py-2': scrolled }" 
-         ref="navbar">
+    <nav class="bg-white dark:bg-gray-800 shadow-lg w-full z-10 transition-all duration-300"
+          :class="[{ 'py-2': scrolled }, { 'fixed': !scrolled, 'absolute': scrolled, 'top-0': !scrolled, 'top-[-64px]': scrolled }]"
+          ref="navbar">
       <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between h-16 items-center">
           <div class="flex items-center space-x-2">
