@@ -9,11 +9,8 @@
         <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
           Highlighted Projects
         </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-2">
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Innovative solutions spanning healthcare systems, biometric identification, and secure government applications
-        </p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            In accordance with Non-Disclosure Agreements, project details have been abstracted to ensure no exposure of proprietary data. These entries serve only to showcase technical implementation and stack expertise.
         </p>
       </div>
 
@@ -30,53 +27,30 @@
           <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 group">
             <div :class="['grid grid-cols-1 lg:grid-cols-2 gap-0', index % 2 === 1 ? 'lg:grid-flow-col-dense' : '']">
               
-                <!-- Project Image/Demo -->
-                <div :class="['relative overflow-hidden', index % 2 === 1 ? 'lg:col-start-2' : '']">
-
-                <!-- Preview Video Background for Advanced Biometric Identification System -->
-                <template v-if="project.title === 'Advanced Biometric Identification System'">
-                  <ABIS />
-                </template>
-                <!-- Preview Video Background for ICNCDRS -->
-                <template v-else-if="project.title === 'Integrated Chronic Non-Communicable Disease Registry System (ICNCDRS)'">
-                  <ICNCDRS />
-                </template>
-                <!-- Preview Video Background for ONEISS -->
-                <template v-else-if="project.title === 'Online National Electronic Injury Surveillance System (ONEISS)'">
-                  <ONEISS />
-                </template>
-                <!-- Preview Video Background for DocTracker -->
-                <template v-else-if="project.title === 'QR Based Document Tracker System (DocTracker)'">
-                  <DocTracker />
-                </template>
-                
-                <!-- Default design for other projects -->
-                <template v-else>
-                  <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-8 flex items-center justify-center h-full min-h-96">
-                  <div class="relative z-10 text-center">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+              <!-- Project Image/Demo -->
+              <div :class="['relative overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 p-8 flex items-center justify-center', index % 2 === 1 ? 'lg:col-start-2' : '']">
+                <div class="relative z-10 text-center">
+                  <div class="w-24 h-24 mx-auto mb-6 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
                     <span class="text-3xl">{{ project.icon }}</span>
-                    </div>
-                    <!-- Category overlay content removed -->
-                    <div v-if="project.demo" class="mt-4">
+                  </div>
+                  <h4 class="text-white text-xl font-bold mb-2">{{ project.category }}</h4>
+                  <div v-if="project.demo" class="mt-4">
                     <a :href="project.demo" 
                        target="_blank"
                        class="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg backdrop-blur-sm transition-all duration-300">
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                       </svg>
                       <span>Live Demo</span>
                     </a>
-                    </div>
                   </div>
-                  <!-- Background Pattern -->
-                  <div class="absolute inset-0 opacity-10">
-                    <div class="absolute top-4 left-4 w-32 h-32 border-2 border-white rounded-full"></div>
-                    <div class="absolute bottom-4 right-4 w-24 h-24 border-2 border-white rounded-full"></div>
-                  </div>
-                  </div>
-                </template>
                 </div>
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-10">
+                  <div class="absolute top-4 left-4 w-32 h-32 border-2 border-white rounded-full"></div>
+                  <div class="absolute bottom-4 right-4 w-24 h-24 border-2 border-white rounded-full"></div>
+                </div>
+              </div>
 
               <!-- Project Content -->
               <div :class="['p-8 lg:p-12 flex flex-col justify-center', index % 2 === 1 ? 'lg:col-start-1' : '']">
@@ -190,10 +164,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import ABIS from './Videos/ABIS.vue' // Import the ABIS video component
-import ICNCDRS from './Videos/ICNCDRS.vue' // Import the ICNCDRS video component
-import ONEISS from './Videos/ONEISS.vue' // Import the ONEISS video component
-import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video component
 
 const featuredProjects = ref([
   {
@@ -201,51 +171,26 @@ const featuredProjects = ref([
     category: 'AI & Machine Learning',
     icon: '🔍',
     description: 'Engineered a comprehensive biometric identification SaaS integrating facial, fingerprint, and name-based recognition for law enforcement background checks. Enabled rapid, secure, and accurate record retrieval through advanced computer vision and AI-powered data matching.',
-    technologies: ['Django', 'Python', 'React', 'Vite', 'TypeScript', 'Javascript', 'Axios', 'OpenCV', 'Face Recognition', 'NumPy', 'PIL'],
-    link: null
+    technologies: ['Django', 'React', 'Vite', 'TypeScript', 'Axios', 'OpenCV', 'Face Recognition', 'NumPy', 'PIL'],
+    link: 'https://frontend-zeta-umber-55.vercel.app/',
+    demo: 'https://frontend-zeta-umber-55.vercel.app/'
   },
   {
     title: 'Integrated Chronic Non-Communicable Disease Registry System (ICNCDRS)',
     category: 'Healthcare Technology',
     icon: '🏥',
-    description: 'Developed an AI-powered digital registry system for the Department of Health to centralize and manage chronic non-communicable disease data across the Philippines. Features include specialized registries (blindness, COPD, coronary, diabetes, stroke, cancer), master patient management, facility assignments, and robust role-based access control (admin, DOH, regional, facility). Integrated Google Gemini AI for intelligent data validation, predictive analytics, and an in-app chatbot for user assistance. Includes dashboards, geographic visualizations, CSV import/export, audit logging, and a secure RESTful API for external integrations.',
-    technologies: ['Laravel 12', 'PHP', 'Inertia', 'React', 'Typescript', 'Javascript', 'MySQL', 'Google Gemini AI', 'RBAC', 'Audit Trail'],
+    description: 'Developed an AI-driven disease registry system for the Department of Health, centralizing patient management, analytics, and reporting. Integrated Google Gemini AI for intelligent data validation, predictive insights, and automated statistical reporting with comprehensive RBAC and audit trails.',
+    technologies: ['Laravel 12', 'Inertia', 'React', 'MySQL', 'Google Gemini AI', 'RBAC', 'Audit Trail'],
     link: null
   },
   {
-    title: 'Online National Electronic Injury Surveillance System (ONEISS)',
-    category: 'Government Health Surveillance',
+    title: 'Integrated Drug Test Operation and Management Information System (IDTOMIS)',
+    category: 'Government Systems',
     icon: '🧪',
-    description: `Built a national electronic injury surveillance system for the Department of Health, enabling secure patient management, injury registration, and multi-facility support. Integrated FHIR-compliant data exchange, audit trails, and role-based access. Leveraged Google Gemini AI for analytics, injury report generation, and predictive insights. Provided advanced reporting, CSV export, real-time dashboards, and ensured security, compliance, and maintainability with automated testing and documentation.`,
-    technologies: [
-      'Laravel 12', 'PHP', 'MySQL', 'L5-Swagger (OpenAPI 3.0)',
-      'PestPHP', 'Audit Trail', 'FHIR Interoperability', 'Google Gemini AI',
-      'Vue 3.5+', 'PrimeVue 4.3+', 'Tailwind CSS 3.1+', 'Alpine.js 3.4+',
-      'Vite 6+', 'Axios', 'RBAC', 'CSV Export', 'Real-time Dashboard', 'Multi-language Support'
-    ],
+    description: 'Developed a comprehensive health information system for the Department of Health to manage drug testing and facility accreditation. Implemented modules for client registry, laboratory workflow, secure data handling, and AI chatbot assistance.',
+    technologies: ['Laravel 12', 'Inertia', 'React', 'TypeScript', 'MySQL', 'AI Chatbot', 'RBAC'],
     link: null
-  },
-  {
-    title: 'QR Based Document Tracker System (DocTracker)',
-    category: 'Government Health Surveillance',
-    icon: '🧪',
-    description: `Built a national electronic injury surveillance system for the Department of Health, enabling secure patient management, injury registration, and multi-facility support. Integrated FHIR-compliant data exchange, audit trails, and role-based access. Leveraged Google Gemini AI for analytics, injury report generation, and predictive insights. Provided advanced reporting, CSV export, real-time dashboards, and ensured security, compliance, and maintainability with automated testing and documentation.`,
-    description: 'Developed a QR-based document tracking system with Laravel 12 and React 19, reducing manual data entry by 85% for IT services offices. Features include real-time tracking, automated QR generation, PDF output, Spatie RBAC, audit trails, multi-office workflows, and reporting dashboards. Demonstrated expertise in API development, database design, responsive UI/UX, and DevOps automation.',
-    technologies: [
-      // Backend
-      'Laravel 12', 'PHP 8.2+', 'Inertia.js', 'Spatie Permissions', 'Laravel Fortify', 'MySQL 8+',
-      'Barryvdh DomPDF', 'LaraZeus Simple QRCode',
-      // Frontend
-      'React 19', 'TypeScript 5+', 'Tailwind CSS 4+', 'Radix UI', 'Framer Motion', 'Lucide React', 'jsQR',
-      // Features
-      'QR Code Integration', 'PDF Generation', 'Role-based Access Control', 'Multi-office Assignment',
-      'Real-time Search', 'Audit Trail', 'Timeline Tracking', 'Status Indicators', 'Public Tracker',
-      // DevOps & Tooling
-      'Vite 7+', 'ESLint', 'Prettier', 'PestPHP'
-    ],
-    link: null
-  },
-
+  }
 ])
 
 const otherProjects = ref([

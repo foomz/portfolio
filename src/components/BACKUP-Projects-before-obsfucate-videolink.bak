@@ -9,11 +9,8 @@
         <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
           Highlighted Projects
         </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-2">
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Innovative solutions spanning healthcare systems, biometric identification, and secure government applications
-        </p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            In accordance with Non-Disclosure Agreements, project details have been abstracted to ensure no exposure of proprietary data. These entries serve only to showcase technical implementation and stack expertise.
         </p>
       </div>
 
@@ -35,19 +32,16 @@
 
                 <!-- Preview Video Background for Advanced Biometric Identification System -->
                 <template v-if="project.title === 'Advanced Biometric Identification System'">
-                  <ABIS />
-                </template>
-                <!-- Preview Video Background for ICNCDRS -->
-                <template v-else-if="project.title === 'Integrated Chronic Non-Communicable Disease Registry System (ICNCDRS)'">
-                  <ICNCDRS />
-                </template>
-                <!-- Preview Video Background for ONEISS -->
-                <template v-else-if="project.title === 'Online National Electronic Injury Surveillance System (ONEISS)'">
-                  <ONEISS />
-                </template>
-                <!-- Preview Video Background for DocTracker -->
-                <template v-else-if="project.title === 'QR Based Document Tracker System (DocTracker)'">
-                  <DocTracker />
+                  <div class="relative h-full min-h-96 pointer-events-none select-none">
+                  <iframe
+                    src="https://streamable.com/e/n1qj85?autoplay=1&muted=1&loop=1"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    frameborder="0"
+                    class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
+                    tabindex="-1"
+                  ></iframe>
+                  </div>
                 </template>
                 
                 <!-- Default design for other projects -->
@@ -190,10 +184,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import ABIS from './Videos/ABIS.vue' // Import the ABIS video component
-import ICNCDRS from './Videos/ICNCDRS.vue' // Import the ICNCDRS video component
-import ONEISS from './Videos/ONEISS.vue' // Import the ONEISS video component
-import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video component
 
 const featuredProjects = ref([
   {
@@ -213,39 +203,13 @@ const featuredProjects = ref([
     link: null
   },
   {
-    title: 'Online National Electronic Injury Surveillance System (ONEISS)',
-    category: 'Government Health Surveillance',
+    title: 'Integrated Drug Test Operation and Management Information System (IDTOMIS)',
+    category: 'Government Systems',
     icon: '🧪',
-    description: `Built a national electronic injury surveillance system for the Department of Health, enabling secure patient management, injury registration, and multi-facility support. Integrated FHIR-compliant data exchange, audit trails, and role-based access. Leveraged Google Gemini AI for analytics, injury report generation, and predictive insights. Provided advanced reporting, CSV export, real-time dashboards, and ensured security, compliance, and maintainability with automated testing and documentation.`,
-    technologies: [
-      'Laravel 12', 'PHP', 'MySQL', 'L5-Swagger (OpenAPI 3.0)',
-      'PestPHP', 'Audit Trail', 'FHIR Interoperability', 'Google Gemini AI',
-      'Vue 3.5+', 'PrimeVue 4.3+', 'Tailwind CSS 3.1+', 'Alpine.js 3.4+',
-      'Vite 6+', 'Axios', 'RBAC', 'CSV Export', 'Real-time Dashboard', 'Multi-language Support'
-    ],
+    description: 'Developed a comprehensive health information system for the Department of Health to manage drug testing and facility accreditation. Implemented modules for client registry, laboratory workflow, secure data handling, and AI chatbot assistance.',
+    technologies: ['Laravel 12', 'Inertia', 'React', 'TypeScript', 'MySQL', 'AI Chatbot', 'RBAC'],
     link: null
-  },
-  {
-    title: 'QR Based Document Tracker System (DocTracker)',
-    category: 'Government Health Surveillance',
-    icon: '🧪',
-    description: `Built a national electronic injury surveillance system for the Department of Health, enabling secure patient management, injury registration, and multi-facility support. Integrated FHIR-compliant data exchange, audit trails, and role-based access. Leveraged Google Gemini AI for analytics, injury report generation, and predictive insights. Provided advanced reporting, CSV export, real-time dashboards, and ensured security, compliance, and maintainability with automated testing and documentation.`,
-    description: 'Developed a QR-based document tracking system with Laravel 12 and React 19, reducing manual data entry by 85% for IT services offices. Features include real-time tracking, automated QR generation, PDF output, Spatie RBAC, audit trails, multi-office workflows, and reporting dashboards. Demonstrated expertise in API development, database design, responsive UI/UX, and DevOps automation.',
-    technologies: [
-      // Backend
-      'Laravel 12', 'PHP 8.2+', 'Inertia.js', 'Spatie Permissions', 'Laravel Fortify', 'MySQL 8+',
-      'Barryvdh DomPDF', 'LaraZeus Simple QRCode',
-      // Frontend
-      'React 19', 'TypeScript 5+', 'Tailwind CSS 4+', 'Radix UI', 'Framer Motion', 'Lucide React', 'jsQR',
-      // Features
-      'QR Code Integration', 'PDF Generation', 'Role-based Access Control', 'Multi-office Assignment',
-      'Real-time Search', 'Audit Trail', 'Timeline Tracking', 'Status Indicators', 'Public Tracker',
-      // DevOps & Tooling
-      'Vite 7+', 'ESLint', 'Prettier', 'PestPHP'
-    ],
-    link: null
-  },
-
+  }
 ])
 
 const otherProjects = ref([
