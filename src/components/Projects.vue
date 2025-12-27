@@ -198,7 +198,7 @@ import ABIS from './Videos/ABIS.vue' // Import the ABIS video component
 import ICNCDRS from './Videos/ICNCDRS.vue' // Import the ICNCDRS video component
 import ONEISS from './Videos/ONEISS.vue' // Import the ONEISS video component
 import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video component
-import IDTOMIS from './Videos/IDTOMIS.vue'
+import IDTOMIS from './Videos/IDTOMIS.vue' // Import the IDTOMIS video component
 
 const featuredProjects = ref([
   {
