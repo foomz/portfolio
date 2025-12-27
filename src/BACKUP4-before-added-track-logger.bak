@@ -111,7 +111,6 @@
         <p class="text-gray-300">© {{ new Date().getFullYear() }} Johnray M. De Luna. All rights reserved.</p>
       </div>
     </footer>
-
   </div>
 </template>
 

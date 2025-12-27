@@ -49,6 +49,10 @@
                 <template v-else-if="project.title === 'QR Based Document Tracker System (DocTracker)'">
                   <DocTracker />
                 </template>
+                <!-- Preview Video Background for IDTOMIS -->
+                <template v-else-if="project.title === 'Integrated Drug Test Operation and Management Information System (IDTOMIS)'">
+                  <IDTOMIS />
+                </template>
                 
                 <!-- Default design for other projects -->
                 <template v-else>
@@ -194,6 +198,7 @@ import ABIS from './Videos/ABIS.vue' // Import the ABIS video component
 import ICNCDRS from './Videos/ICNCDRS.vue' // Import the ICNCDRS video component
 import ONEISS from './Videos/ONEISS.vue' // Import the ONEISS video component
 import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video component
+import IDTOMIS from './Videos/IDTOMIS.vue'
 
 const featuredProjects = ref([
   {
@@ -229,7 +234,6 @@ const featuredProjects = ref([
     title: 'QR Based Document Tracker System (DocTracker)',
     category: 'Government Health Surveillance',
     icon: '🧪',
-    description: `Built a national electronic injury surveillance system for the Department of Health, enabling secure patient management, injury registration, and multi-facility support. Integrated FHIR-compliant data exchange, audit trails, and role-based access. Leveraged Google Gemini AI for analytics, injury report generation, and predictive insights. Provided advanced reporting, CSV export, real-time dashboards, and ensured security, compliance, and maintainability with automated testing and documentation.`,
     description: 'Developed a QR-based document tracking system with Laravel 12 and React 19, reducing manual data entry by 85% for IT services offices. Features include real-time tracking, automated QR generation, PDF output, Spatie RBAC, audit trails, multi-office workflows, and reporting dashboards. Demonstrated expertise in API development, database design, responsive UI/UX, and DevOps automation.',
     technologies: [
       // Backend
@@ -245,7 +249,16 @@ const featuredProjects = ref([
     ],
     link: null
   },
-
+    {
+    title: 'Integrated Drug Test Operation and Management Information System (IDTOMIS)',
+    category: 'Government Drug Testing Management',
+    icon: '🧪',
+    description: 'Architected and Built the Integrated Drug Test Operation and Management Information System (IDTOMIS) from the ground up, a microservice-based national digital health platform for the Philippine Department of Health supporting the full drug testing lifecycle—from public client registration via E-Gov PH SSO, biometric capture, and encrypted QR code generation to facility-based screening, laboratory workflows, accreditation management, and remote collection permit processing with geolocation and face verification. Architected three independently deployed yet tightly coordinated systems (Client Registry, Core Operations & Accreditation, and RCO Permit Management), each with its own database and bounded context, communicating securely through RESTful APIs. Implemented using Laravel, React, TypeScript, and MySQL, with RBAC, full audit trails, and data-privacy compliance, delivering a scalable, fault-isolated, and fully auditable nationwide platform aligned with government digital transformation standards.',
+    technologies: [
+      'PHP 8.2+', 'Laravel 12.x', 'Eloquent ORM', 'MySQL 8+', 'RESTful APIs', 'Spatie Laravel Permission', 'Laravel Fortify', 'Inertia.js 2.0', 'LaraZeus QR', 'Laravel Wayfinder', 'DomPDF', 'PestPHP', 'React 19', 'TypeScript', 'Tailwind CSS 4.0', 'Radix UI', 'Lucide React', 'face-api.js', 'jsQR', 'react-webcam', 'Axios', 'Vite 7+', 'ESLint', 'Prettier', 'TypeScript ESLint', 'Laravel Pint', 'Database Sessions', 'Queue System', 'Comprehensive Logging', 'SMTP Mail', 'RBAC', 'Audit Trail', 'Notifications', 'Activity Logs', 'Dashboard Stats'
+    ],
+    link: null
+  },
 ])
 
 const otherProjects = ref([
