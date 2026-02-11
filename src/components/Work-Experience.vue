@@ -223,7 +223,7 @@
                        :initial="{ x: -20, opacity: 0 }"
                        :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 800 } }">
                     <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Maintained NBI Clearance Biometric Platform in Technology Infrastructure Division ensuring 99.9% uptime and data integrity for nationwide operations.</span>
+                    <span>Maintained platforms including NBI Information System, Clearance Biometric System, Human Resource Information System and the Criminal History Information System in Technology Infrastructure Division ensuring 99.9% uptime and data integrity for nationwide operations.</span>
                   </div>
                   
                   <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
