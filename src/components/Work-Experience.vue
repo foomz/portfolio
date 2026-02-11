@@ -170,7 +170,7 @@
                   </div>
                   <div class="min-w-0 flex-1">
                     <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white leading-tight">NATIONAL BUREAU OF INVESTIGATION</h3>
-                    <p class="text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">IT Support / Cyber Investigator</p>
+                    <p class="text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">Project Worker / Cyber Investigator</p>
                   </div>
                 </div>
                 
