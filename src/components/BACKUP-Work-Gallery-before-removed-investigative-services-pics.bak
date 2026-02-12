@@ -104,7 +104,7 @@ const experience = ref([
         }
     ]
   },
-{/* {
+  {
     department: 'Regional District Offices – Investigative Services',
     period: 'March 2024 – December 2024',
     photos: [
@@ -171,7 +171,7 @@ const experience = ref([
         description: 'Forensic Imaging'
       }
     ]
-  } */} 
+  }
 ])
 </script>
 
