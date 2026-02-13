@@ -133,7 +133,7 @@ const highlights = ref([
 const socialLinks = ref([
   {
     name: 'Email',
-    url: 'mailto:johnraydeluna@gmail.com',
+    url: 'mailto:johnraydeluna28@gmail.com',
     icon: ''
   },
   {
