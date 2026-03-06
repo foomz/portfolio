@@ -25,7 +25,7 @@
                :initial="{ scale: 0, opacity: 0 }"
                :visible="{ scale: 1, opacity: 1 }"
                :delay="400">
-            <img src="https://i.imgur.com/2o0jZY6.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover">
+            <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover">
           </div>
           <!-- Status Indicator -->
           <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
