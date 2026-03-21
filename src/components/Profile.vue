@@ -10,91 +10,91 @@
     </div>
 
     <!-- Main Content -->
-    <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
       <!-- Profile Section -->
-      <div class="mb-8 sm:mb-12 lg:mb-16"
+      <div class="mb-6 sm:mb-8 md:mb-12 lg:mb-16"
+         v-motion
+         :initial="{ y: 100, opacity: 0 }"
+         :visible="{ y: 0, opacity: 1 }"
+         :delay="200">
+      
+      <!-- Profile Image -->
+      <div class="relative mb-6 sm:mb-8 inline-block">
+        <div class="w-40 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 mx-auto rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm hover:scale-105 transition-all duration-500"
            v-motion
-           :initial="{ y: 100, opacity: 0 }"
-           :visible="{ y: 0, opacity: 1 }"
-           :delay="200">
-        
-        <!-- Profile Image -->
-        <div class="relative mb-8 inline-block">
-          <div class="w-56 h-56 mx-auto rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm hover:scale-105 transition-all duration-500"
-               v-motion
-               :initial="{ scale: 0, opacity: 0 }"
-               :visible="{ scale: 1, opacity: 1 }"
-               :delay="400">
-            <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover">
-          </div>
-          <!-- Status Indicator -->
-          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-          </div>
+           :initial="{ scale: 0, opacity: 0 }"
+           :visible="{ scale: 1, opacity: 1 }"
+           :delay="400">
+        <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover">
         </div>
-
-        <!-- Name and Title -->
-        <div class="space-y-4 mb-8">
-          <TypeWriter
-            :texts="['Johnray M. De Luna']"
-            tag="h1"
-            class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight"
-          />
-          <div class="space-y-2">
-            <TypeWriter
-              :texts="['Full Stack Developer & DevOps Professional', '7+ Years Experience in Government Systems & AI Solutions']"
-              tag="p"
-              class="text-2xl md:text-3xl font-semibold text-blue-200"
-              :repeat="false"
-            />
-          </div>
-        </div>
-
-        <!-- Professional Summary -->
-        <div class="max-w-4xl mx-auto mb-12 p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl"
-             v-motion
-             :initial="{ y: 50, opacity: 0 }"
-             :visible="{ y: 0, opacity: 1 }"
-             :delay="600">
-          <h3 class="text-xl font-bold mb-4 text-blue-300">Professional Summary</h3>
-          <p class="text-gray-200 leading-relaxed text-left">
-            Full Stack Developer and DevOps Professional with 7+ years of progressive experience creating secure and scalable systems 
-            along with AI-powered solutions in large government organizations such as the Department of Health (DOH) and National 
-            Bureau of Investigation (NBI). Specialized in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices.
-          </p>
-        </div>
-
-        <!-- Key Highlights -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
-          <div v-for="(highlight, index) in highlights" 
-               :key="highlight.title"
-               class="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
-               v-motion
-               :initial="{ y: 30, opacity: 0 }"
-               :visible="{ y: 0, opacity: 1 }"
-               :delay="800 + index * 100">
-            <div class="text-3xl mb-3">{{ highlight.icon }}</div>
-            <h4 class="text-lg font-semibold text-blue-300 mb-2">{{ highlight.title }}</h4>
-            <p class="text-sm text-gray-300">{{ highlight.description }}</p>
-          </div>
+        <!-- Status Indicator -->
+        <div class="absolute -bottom-2 -right-2 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+        <div class="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
         </div>
       </div>
 
-      <!-- Social Links -->
-      <div class="flex flex-wrap justify-center gap-4"
+      <!-- Name and Title -->
+      <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+        <TypeWriter
+        :texts="['Johnray M. De Luna']"
+        tag="h1"
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight"
+        />
+        <div class="space-y-2">
+        <TypeWriter
+          :texts="['Full Stack Developer & DevOps Professional', '7+ Years Experience in Government Systems & AI Solutions']"
+          tag="p"
+          class="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-blue-200"
+          :repeat="false"
+        />
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-6 md:p-8 bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/20 shadow-xl"
+         v-motion
+         :initial="{ y: 50, opacity: 0 }"
+         :visible="{ y: 0, opacity: 1 }"
+         :delay="600">
+        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-blue-300">Professional Summary</h3>
+        <p class="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed text-left">
+        Full Stack Developer and DevOps Professional with 7+ years of progressive experience creating secure and scalable systems 
+        along with AI-powered solutions in large government organizations such as the Department of Health (DOH) and National 
+        Bureau of Investigation (NBI). Specialized in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices.
+        </p>
+      </div>
+
+      <!-- Key Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 max-w-5xl mx-auto">
+        <div v-for="(highlight, index) in highlights" 
+           :key="highlight.title"
+           class="p-4 sm:p-5 md:p-6 bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
            v-motion
-           :initial="{ y: 50, opacity: 0 }"
+           :initial="{ y: 30, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }"
-           :delay="1000">
-        <a v-for="social in socialLinks" 
-           :key="social.name"
-           :href="social.url" 
-           :target="social.name === 'Email' ? '_self' : '_blank'"
-           class="flex items-center space-x-3 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group">
-          <EnvelopeIcon v-if="social.name === 'Email'" class="h-5 w-5 text-white group-hover:text-blue-300 transition-colors" />
-          <div v-else v-html="social.icon" class="text-white group-hover:text-blue-300 transition-colors"></div>
-          <span class="text-white group-hover:text-blue-300 transition-colors">{{ social.name }}</span>
-        </a>
+           :delay="800 + index * 100">
+        <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">{{ highlight.icon }}</div>
+        <h4 class="text-base sm:text-lg font-semibold text-blue-300 mb-2">{{ highlight.title }}</h4>
+        <p class="text-xs sm:text-sm text-gray-300">{{ highlight.description }}</p>
+        </div>
+      </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4"
+         v-motion
+         :initial="{ y: 50, opacity: 0 }"
+         :visible="{ y: 0, opacity: 1 }"
+         :delay="1000">
+      <a v-for="social in socialLinks" 
+         :key="social.name"
+         :href="social.url" 
+         :target="social.name === 'Email' ? '_self' : '_blank'"
+         class="flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group text-xs sm:text-sm md:text-base">
+        <EnvelopeIcon v-if="social.name === 'Email'" class="h-4 sm:h-5 w-4 sm:w-5 text-white group-hover:text-blue-300 transition-colors" />
+        <div v-else v-html="social.icon" class="h-4 sm:h-5 w-4 sm:w-5 text-white group-hover:text-blue-300 transition-colors"></div>
+        <span class="text-white group-hover:text-blue-300 transition-colors hidden sm:inline">{{ social.name }}</span>
+      </a>
       </div>
     </div>
 

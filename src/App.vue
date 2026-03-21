@@ -1,30 +1,51 @@
 <template>
   <div class="min-h-screen bg-gray-200 dark:bg-gray-900 transition-colors duration-300">
     <!-- Navigation with scroll effect -->
-    <nav class="bg-white dark:bg-gray-800 shadow-lg w-full z-10 transition-all duration-300"
-          :class="[{ 'py-2': scrolled }, { 'fixed': !scrolled, 'absolute': scrolled, 'top-0': !scrolled, 'top-[-64px]': scrolled }]"
+    <nav class="bg-white dark:bg-gray-800 shadow-lg w-full z-10 transition-all duration-300 fixed top-0"
+          :class="{ 'py-2': scrolled }"
           ref="navbar">
-      <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         <div class="flex justify-between h-16 items-center">
           <div class="flex items-center space-x-2">
-            <img src="https://i.imgur.com/Ap9Seoc.png" alt="Profile" class="h-10 w-10 rounded-full object-cover">
-            <h1 class="text-xl font-bold dark:text-white">Portfolio</h1>
+            <img src="https://i.imgur.com/Ap9Seoc.png" alt="Profile" class="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover">
+            <h1 class="text-lg sm:text-xl font-bold dark:text-white">Portfolio</h1>
           </div>
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-4">
+          <!-- Desktop/Tablet Navigation -->
+          <div class="hidden lg:flex items-center justify-end space-x-2 xl:space-x-4">
             <button @click="toggleDarkMode" 
                     class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
-              <SunIcon v-if="isDark" class="h-6 w-6 text-yellow-500" />
-              <MoonIcon v-else class="h-6 w-6 text-gray-600" />
+              <SunIcon v-if="isDark" class="h-5 w-5 xl:h-6 xl:w-6 text-yellow-500" />
+              <MoonIcon v-else class="h-5 w-5 xl:h-6 xl:w-6 text-gray-600" />
             </button>
-            <a href="#profile" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Profile</a>
-            <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Work Experience</a>
-            <a href="#gallery" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Work Gallery</a>
-            <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Skills</a>
-            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Projects</a>
+            <a href="#profile" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Profile</a>
+            <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Experience</a>
+            <a href="#gallery" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Gallery</a>
+            <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Skills</a>
+            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Projects</a>
+          </div>
+          <!-- Tablet Navigation -->
+          <div class="hidden md:flex lg:hidden items-center justify-end space-x-1">
+            <button @click="toggleDarkMode" 
+                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+              <SunIcon v-if="isDark" class="h-5 w-5 text-yellow-500" />
+              <MoonIcon v-else class="h-5 w-5 text-gray-600" />
+            </button>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <svg v-if="!mobileMenuOpen" class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg v-else class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
           <!-- Mobile Hamburger -->
-          <div class="md:hidden flex items-center">
+          <div class="md:hidden flex items-center space-x-2">
+            <button @click="toggleDarkMode" 
+                    class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+              <SunIcon v-if="isDark" class="h-5 w-5 text-yellow-500" />
+              <MoonIcon v-else class="h-5 w-5 text-gray-600" />
+            </button>
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
               <svg v-if="!mobileMenuOpen" class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -35,20 +56,15 @@
             </button>
           </div>
         </div>
-        <!-- Mobile Menu -->
-        <transition name="fade">
-          <div v-if="mobileMenuOpen" class="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-800 shadow-lg z-20">
-            <div class="flex flex-col items-center py-4 space-y-2">
-              <button @click="toggleDarkMode" 
-                      class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 mb-2">
-                <SunIcon v-if="isDark" class="h-6 w-6 text-yellow-500" />
-                <MoonIcon v-else class="h-6 w-6 text-gray-600" />
-              </button>
-              <a href="#profile" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Profile</a>
-              <a href="#experience" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Work Experience</a>
-              <a href="#gallery" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Work Gallery</a>
-              <a href="#skills" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Skills</a>
-              <a href="#projects" class="w-full text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" @click="mobileMenuOpen = false">Projects</a>
+        <!-- Mobile/Tablet Menu -->
+        <transition name="slide-fade">
+          <div v-if="mobileMenuOpen" class="lg:hidden absolute top-16 right-0 w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-800 shadow-xl rounded-bl-lg z-20">
+            <div class="flex flex-col items-end py-4 pr-4 space-y-1">
+              <a href="#profile" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Profile</a>
+              <a href="#experience" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Work Experience</a>
+              <a href="#gallery" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Work Gallery</a>
+              <a href="#skills" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Skills</a>
+              <a href="#projects" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Projects</a>
             </div>
           </div>
         </transition>
@@ -169,6 +185,24 @@ html {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 @keyframes rotate-360 {

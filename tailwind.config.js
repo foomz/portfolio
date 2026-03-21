@@ -6,7 +6,16 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '384px',  // Extra small screens (common mobile width)
+        'sm': '640px',  // Small mobile devices
+        'md': '768px',  // Tablets
+        'lg': '1024px', // Desktop
+        'xl': '1280px', // Large desktop
+        '2xl': '1536px' // Extra large desktop
+      },
+    },
   },
   plugins: [],
 }
