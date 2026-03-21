@@ -53,6 +53,10 @@
                 <template v-else-if="project.title === 'Integrated Drug Test Operation and Management Information System (IDTOMIS)'">
                   <IDTOMIS />
                 </template>
+                <!-- Preview Video Background for Manila Central University AI Chatbot Assistant -->
+                <template v-else-if="project.title === 'Manila Central University AI Chatbot Assistant'">
+                  <MCU />
+                </template>
                 
                 <!-- Default design for other projects -->
                 <template v-else>
@@ -199,8 +203,17 @@ import ICNCDRS from './Videos/ICNCDRS.vue' // Import the ICNCDRS video component
 import ONEISS from './Videos/ONEISS.vue' // Import the ONEISS video component
 import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video component
 import IDTOMIS from './Videos/IDTOMIS.vue' // Import the IDTOMIS video component
+import MCU from './Videos/MCU.vue' // Import the MCU video component
 
 const featuredProjects = ref([
+  {
+    title: 'Manila Central University AI Chatbot Assistant',
+    category: 'AI-Powered Educational Technology',
+    icon: '🤖',
+    description: 'Built an AI-powered chatbot application for Manila Central University using Next.js frontend and Express.js backend, integrated with Google Gemini API. Features real-time chat interface, typewriter animations, MCU-specific knowledge base, responsive design with Tailwind CSS, and backend production deployment on Railway with cross-origin support while the frontend is hosted on Vercel.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Express.js', 'Node.js', 'Google Gemini API', 'Tailwind CSS', 'Axios', 'CORS', 'Railway', 'Vercel'],
+    link: 'https://mcu-ai-chatbot.vercel.app/'
+  },
   {
     title: 'Advanced Biometric Identification System',
     category: 'AI & Machine Learning',
