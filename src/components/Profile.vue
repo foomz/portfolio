@@ -42,7 +42,7 @@
         />
         <div class="space-y-2">
         <TypeWriter
-          :texts="['Full Stack Developer & DevOps Professional', '7+ Years Experience in Government Systems & AI Solutions']"
+          :texts="['Full Stack Developer & DevOps Professional', '8+ Years Experience in Government Systems & AI Solutions']"
           tag="p"
           class="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-blue-200"
           :repeat="false"
@@ -58,7 +58,7 @@
          :delay="600">
         <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-blue-300">Professional Summary</h3>
         <p class="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed text-left">
-        Full Stack Developer and DevOps Professional with 7+ years of progressive experience creating secure and scalable systems 
+        Full Stack Developer and DevOps Professional with 8+ years of progressive experience creating secure and scalable systems 
         along with AI-powered solutions in large government organizations such as the Department of Health (DOH) and National 
         Bureau of Investigation (NBI). Specialized in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices.
         </p>
