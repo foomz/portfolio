@@ -57,6 +57,10 @@
                 <template v-else-if="project.title === 'Manila Central University AI Chatbot Assistant'">
                   <MCU />
                 </template>
+                <!-- Preview Video Background for CIAC Information System -->
+                <template v-else-if="project.title === 'NBI Cybercrime Investigation and Assessment Center (CIAC) - Cybercrime Case Management'">
+                  <CiacIS />
+                </template>
                 
                 <!-- Default design for other projects -->
                 <template v-else>
@@ -121,6 +125,7 @@
                     </svg>
                   </a>
                 </div>
+                <p v-if="project.link" class="text-xs text-gray-500 dark:text-gray-400 mt-3">*Demo/test live at Railway Cloud backend may be deprecated</p>
               </div>
             </div>
           </div>
@@ -204,8 +209,17 @@ import ONEISS from './Videos/ONEISS.vue' // Import the ONEISS video component
 import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video component
 import IDTOMIS from './Videos/IDTOMIS.vue' // Import the IDTOMIS video component
 import MCU from './Videos/MCU.vue' // Import the MCU video component
+import CiacIS from './Videos/CiacIS.vue' // Import the CiacIS video component
 
 const featuredProjects = ref([
+  {
+    title: 'NBI Cybercrime Investigation and Assessment Center (CIAC) - Cybercrime Case Management',
+    category: 'Law Enforcement & Cybercrime Investigation',
+    icon: '🚔',
+    description: 'Engineered a comprehensive cybercrime case management system for law enforcement enabling registration, management, and analysis of cybercrime cases with advanced encryption for sensitive PII (names, contact numbers, email addresses). Features specialized case workflows (complaint info, cybercrime history, suspect details), bulk Excel import with validation, advanced search and filtering, interactive analytics dashboard with Philippine regional heatmap, role-based access control (Admin, Encoder), and secure data encryption using AES-256-CBC with SHA256 key derivation.',
+    technologies: ['Laravel 13', 'PHP 8.3+', 'React 19', 'TypeScript', 'Inertia.js 2', 'MySQL 8.0', 'Tailwind CSS 4', 'Shadcn/ui', 'Recharts', 'AES-256 Encryption', 'Spatie RBAC', 'Maatwebsite Excel', 'Vite', 'Axios'],
+    link: null
+  },
   {
     title: 'Manila Central University AI Chatbot Assistant',
     category: 'AI-Powered Educational Technology',
