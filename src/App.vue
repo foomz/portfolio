@@ -77,13 +77,19 @@
           <Profile /> <!-- Render the Profile Component -->
         </section>
 
-        <!-- Experience Section -->
+        <!-- Work Experience Section -->
         <section id="experience">
           <WorkExperience /> <!-- Render the Work Experience Component with experience prop -->
         </section>
 
+        <!-- Work Gallery Section -->
         <section id="gallery">
           <WorkGallery /> <!-- Render the Work Gallery Component -->
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+          <Projects /> <!-- Render the Projects Component -->
         </section>
 
         <!-- Skills Section -->
@@ -91,10 +97,6 @@
           <Skills /> <!-- Render the Skills Component -->
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-          <Projects /> <!-- Render the Projects Component -->
-        </section>
     </main>
 
     <!-- Footer -->
