@@ -36,7 +36,8 @@
            :initial="{ scale: 0, opacity: 0 }"
            :visible="{ scale: 1, opacity: 1 }"
            :delay="400">
-        <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover">
+        <img src="/public/YoungMe.png" alt="Johnray M. De Luna" class="w-full h-full object-cover">
+        <!-- <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover"> --> <!-- Temporary Disabled  -->
         </div>
         <!-- Status Indicator -->
         <div class="absolute -bottom-2 -right-2 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
