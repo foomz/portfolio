@@ -62,7 +62,7 @@
       </div>
 
       <!-- Professional Summary -->
-      <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-5 md:p-6 bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
+      <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-5 md:p-6 bg-white/1 backdrop-blur-sm rounded-lg sm:rounded-xl  hover:bg-white/10 transition-all duration-300"
          v-motion
          :initial="{ y: 50, opacity: 0 }"
          :visible="{ y: 0, opacity: 1 }"
@@ -79,7 +79,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 max-w-5xl mx-auto">
         <div v-for="(highlight, index) in highlights" 
            :key="highlight.title"
-           class="p-4 sm:p-5 md:p-6 bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
+           class="p-4 sm:p-5 md:p-6 bg-white/1 backdrop-blur-sm rounded-lg sm:rounded-xl hover:bg-white/10 transition-all duration-300"
            v-motion
            :initial="{ y: 30, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }"
