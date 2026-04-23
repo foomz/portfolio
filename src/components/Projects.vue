@@ -1,6 +1,18 @@
 <template>
-  <section class="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900 transition-all duration-300" id="projects">
-    <div class="max-w-7xl mx-auto">
+  <section class="py-20 px-4 relative overflow-hidden transition-all duration-300" id="projects">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    >
+      <source src="/ProjectsVid.mp4" type="video/mp4">
+    </video>
+
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-50/90 via-pink-50/85 to-rose-100/85 dark:from-gray-900/90 dark:via-purple-900/85 dark:to-gray-900/90 z-[1]"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
       <!-- Header -->
       <div class="text-center mb-16"
            v-motion

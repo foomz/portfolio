@@ -99,8 +99,8 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
+    <!-- Footer Using now at Skills.vue Component--> 
+   <!-- <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
       <div class="max-w-7xl mx-auto px-4 text-center">
         <div class="flex justify-center space-x-6 mb-4">
           <a href="mailto:jdeluna@nbi.gov.ph" class="flex items-center space-x-2 hover:text-blue-400 transition-colors">
@@ -128,7 +128,7 @@
         </div>
         <p class="text-gray-300">© {{ new Date().getFullYear() }} Johnray M. De Luna. All rights reserved.</p>
       </div>
-    </footer>
+    </footer> -->
 
   </div>
 </template>
