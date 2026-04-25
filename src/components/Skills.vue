@@ -112,7 +112,7 @@
             <span>LinkedIn</span>
           </a>
         </div>
-        <p class="text-gray-300 text-sm">© {{ new Date().getFullYear() }} Johnray M. De Luna. <span class="text-blue-400 font-semibold">Hire me to unlock full potential.</span></p>
+        <p class="text-gray-300 text-sm">© {{ new Date().getFullYear() }} Johnray M. De Luna. <span class="text-blue-400 font-semibold">Hire me to unlock my full potential.</span></p>
       </div>
     </footer>
   
