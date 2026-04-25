@@ -173,12 +173,13 @@
             <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
               
               <!-- Right Side Image - Positioned at outside right top of card -->
-              <div class="hidden md:block absolute -top-0 -right-52 z-30 flex flex-col space-y-12">
+              <div class="hidden md:block absolute -center-0 -right-52 z-30 flex flex-col space-y-8">
                 <img src="/WorkExperienceImages/Me1.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
                 <img src="/WorkExperienceImages/Me2.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
                 <img src="/WorkExperienceImages/Me3.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
                 <img src="/WorkExperienceImages/Me4.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
                 <img src="/WorkExperienceImages/Me5.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+                <img src="/WorkExperienceImages/Me6.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
               </div>
 
               <!-- Company Header -->
@@ -233,13 +234,29 @@
                     <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Started as OJT at NBI Digital Forensics Laboratory performing forensic imaging, evidence extraction, and technical documentation for court proceedings with 100% evidence chain custody.</span>
                   </div>
-                  
+
                   <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
                        v-motion
                        :initial="{ x: -20, opacity: 0 }"
                        :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 700 } }">
                     <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Progressed through Cybercrime Division conducting cyber incident investigations, data breach assessments, and digital evidence validation for criminal cases.</span>
+                  </div>
+
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 1100 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Integrated Lampyre for advanced data analysis and OSINT investigations, establishing actionable leads and resource links to support cyber offender identification and tracking.</span>
+                  </div>
+
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 1000 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Built Django IP tracking framework for digital forensics operations, identifying investigative leads and enhancing traceability protocols for law enforcement investigations.</span>
                   </div>
                   
                   <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
@@ -257,6 +274,7 @@
                     <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Managed data center infrastructure and provided technical support for regional offices while strengthening IT security through network diagnostics and system monitoring.</span>
                   </div>
+
                 </div>
               </div>
 
@@ -302,7 +320,6 @@
               </div>
             </div>
           </div>
-
         </div> <!-- End of National Bureau of Investigation Card -->
 
       </div>
