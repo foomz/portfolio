@@ -19,7 +19,7 @@
            :initial="{ y: 50, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-          Highlighted Projects
+          Recent Projects
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-2">
           Innovative solutions spanning healthcare systems, biometric identification, and secure government applications
