@@ -157,7 +157,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> <!-- End of Department of Health Work Experience Card -->
         
         <!-- National Bureau of Investigation - Previous Position -->
         <div class="relative flex items-center md:flex-row-reverse mb-8 sm:mb-12 lg:mb-16"
@@ -203,7 +203,10 @@
                   </span>
                 </div>
 
-                <p class="text-gray-600 dark:text-gray-400 italic">Started as OJT at Digital Forensics Laboratory, progressed through multiple divisions</p>
+                <p class="text-gray-600 dark:text-gray-400">
+                  <span class="italic block mb-2">Career progression from On-The-Job Trainee to Full Project Worker</span>
+                  <span class="text-sm text-blue-600 dark:text-blue-400 font-medium">Digital Forensics Laboratory → Cybercrime Division → Technology Infrastructure Division → Regional District Offices</span>
+                </p>
               </div>
 
               <!-- Career Progression -->
@@ -289,7 +292,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> <!-- End of National Bureau of Investigation Card-->
+
       </div>
     </div>
   </section>
