@@ -63,16 +63,14 @@
       </div>
 
       <!-- Professional Summary -->
-      <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-5 md:p-6 bg-white/1 backdrop-blur-sm rounded-lg sm:rounded-xl  hover:bg-white/10 transition-all duration-300"
+      <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-5 md:p-6 hover:bg-white/10 transition-all duration-300"
          v-motion
          :initial="{ y: 50, opacity: 0 }"
          :visible="{ y: 0, opacity: 1 }"
          :delay="600">
-        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-blue-300">Professional Summary</h3>
-        <p class="text-xs sm:text-sm md:text-base text-white-200 leading-relaxed text-left">
-        Full Stack Developer and DevOps Professional with 8+ years of progressive experience creating secure and scalable systems 
-        along with AI-powered solutions in large government organizations such as the Department of Health (DOH) and National 
-        Bureau of Investigation (NBI). Specialized in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices.
+        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-blue-300">About Me</h3>
+        <p class="text-xs sm:text-sm md:text-base text-white-200 leading-relaxed text-left mb-4">
+        Hi, I'm Johnray! I transitioned from a law enforcement background into technology, where I have built a solid career over the past 8+ years as a Full Stack Developer and DevOps Professional. I have progressive experience creating secure, scalable systems and AI-powered solutions for major government organizations such as the Department of Health (DOH) and the National Bureau of Investigation (NBI). I specialize in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices. Now, I am excited to explore new opportunities in the tech industry and expand my horizons by delivering innovative technology solutions.
         </p>
       </div>
 

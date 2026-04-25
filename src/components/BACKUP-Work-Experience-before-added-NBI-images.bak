@@ -167,20 +167,10 @@
           
           <!-- Timeline Dot -->
           <div class="absolute left-6 sm:left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full border-2 sm:border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
-
+          
           <!-- Content Card -->
-          <div class="w-full md:w-5/12 ml-12 sm:ml-16 md:ml-8 md:mr-0 relative">
+          <div class="w-full md:w-5/12 ml-12 sm:ml-16 md:ml-8 md:mr-0">
             <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
-              
-              <!-- Right Side Image - Positioned at outside right top of card -->
-              <div class="hidden md:block absolute -top-0 -right-52 z-30 flex flex-col space-y-12">
-                <img src="/WorkExperienceImages/Me1.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me2.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me3.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me4.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me5.jpg" alt="NBI Work Experience" width="200" height="200" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-              </div>
-
               <!-- Company Header -->
               <div class="mb-6">
                 <div class="flex items-center mb-4">
@@ -302,8 +292,7 @@
               </div>
             </div>
           </div>
-
-        </div> <!-- End of National Bureau of Investigation Card -->
+        </div> <!-- End of National Bureau of Investigation Card-->
 
       </div>
     </div>
