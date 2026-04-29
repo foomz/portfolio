@@ -119,7 +119,7 @@
                        :initial="{ x: -20, opacity: 0 }"
                        :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 700 } }">
                     <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Created iClinicSys, an LLM-powered application using Django, Next.js, TensorFlow, Keras, and Scikit-Learn for automatic ICD-10/11 code prediction and clinical decision support with Google Gemini AI integration.</span>
+                    <span>Created ICD10/11 module for iClinicSys , an LLM-powered application using Django, Next.js, TensorFlow, Keras, and Scikit-Learn for automatic ICD-10/11 code prediction and clinical decision support with Google Gemini AI integration.</span>
                   </div>
                   
                   <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
@@ -327,7 +327,7 @@
           </div>
         </div> <!-- End of National Bureau of Investigation Card -->
 
-      </div>
+      </div> <!-- End of Timeline Container -->
     </div>
   </section>
 </template>

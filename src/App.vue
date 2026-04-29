@@ -137,7 +137,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue' // Importing necessary Vue functions
 // Mobile menu state
 const mobileMenuOpen = ref(false)
 const isLoading = ref(true)
