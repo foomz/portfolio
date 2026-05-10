@@ -129,7 +129,7 @@ const coreCompetencies = ref([
     icon: '💻',
     count: 15,
     proficiency: 95,
-    skills: ['Django', 'Laravel', 'Inertia', 'React', 'Next.js', 'Vue', 'Vite', 'Svelte', 'Node.js', 'TypeScript', 'Python', 'PHP', 'Bash', 'SQL', 'Tailwind CSS']
+    skills: ['Django', 'FastAPI', 'Laravel', 'Inertia', 'React', 'Next.js', 'Vue', 'Vite', 'Svelte', 'Node.js', 'TypeScript', 'Python', 'PHP', 'Bash', 'SQL', 'Tailwind CSS']
   },
   {
     title: 'DevOps & Cloud',

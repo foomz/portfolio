@@ -135,6 +135,14 @@
                     <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span>Developed automated background services and API consumers to synchronize patient profiles, lab records, facility reports, and statistical indicators across different DOH systems.</span>
                   </div>
+
+                  <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                       v-motion
+                       :initial="{ x: -20, opacity: 0 }"
+                       :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 900 } }">
+                    <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Developed and integrated FastAPI facial recognition into IDTOMIS, enabling real-time face matching and registration with deep learning face encodings.</span>
+                  </div>
                 </div>
               </div>
 
@@ -146,6 +154,7 @@
                 </h5>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Django</span>
+                  <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">FastAPI</span>
                   <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Next.js</span>
                   <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">TensorFlow</span>
                   <span class="px-3 py-1 text-xs font-medium bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900 text-green-800 dark:text-green-200 rounded-full border border-green-200 dark:border-green-700">Google Gemini AI</span>
