@@ -1,7 +1,7 @@
 <template>
   <div class="relative h-full min-h-96 pointer-events-none select-none">
     <iframe
-      src="https://streamable.com/e/0sf0an?autoplay=1&muted=1"
+      src="https://streamable.com/e/6yh5db?autoplay=1&muted=1"
       allow="autoplay; encrypted-media"
       allowfullscreen
       frameborder="0"
