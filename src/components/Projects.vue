@@ -73,6 +73,10 @@
                 <template v-else-if="project.title === 'NBI Cybercrime Investigation and Assessment Center (CIAC) - Cybercrime Case Management'">
                   <CiacIS />
                 </template>
+                <!-- Preview Video Background for Face Recognition System -->
+                <template v-else-if="project.title === 'FastAPI-based Face Recognition'">
+                  <FaceRecognition />
+                </template>
                 
                 <!-- Default design for other projects -->
                 <template v-else>
@@ -222,8 +226,17 @@ import DocTracker from './Videos/DocTracker.vue' // Import the DocTracker video 
 import IDTOMIS from './Videos/IDTOMIS.vue' // Import the IDTOMIS video component
 import MCU from './Videos/MCU.vue' // Import the MCU video component
 import CiacIS from './Videos/CiacIS.vue' // Import the CiacIS video component
+import FaceRecognition from './Videos/Face-Recognition.vue' // Import the Face Recognition video component
 
 const featuredProjects = ref([
+  {
+    title: 'FastAPI-based Face Recognition',
+    category: 'Biometric Identification & Computer Vision',
+    icon: '🚔',
+    description: 'Built a FastAPI-based facial recognition API for identity verification. Enables secure face registration and real-time face matching using deep-learning 128-dim face encodings stored in MySQL. Easy to integrate via simple JSON REST endpoints, supports CORS for web frontends, includes comprehensive error handling, configurable matching tolerance, and safe temporary file cleanup.',
+    technologies: ['Python 3.8+', 'FastAPI', 'Uvicorn', 'face_recognition', 'SQLAlchemy', 'MySQL', 'NumPy', 'pymysql'],
+    link: null
+  },
   {
     title: 'NBI Cybercrime Investigation and Assessment Center (CIAC) - Cybercrime Case Management',
     category: 'Law Enforcement & Cybercrime Investigation',
