@@ -29,7 +29,7 @@
            :initial="{ y: 80, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }"
            :delay="200">
-          <div class="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase text-blue-100 backdrop-blur-xsm sm:text-sm">
+          <div class="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase text-white backdrop-blur-xsm sm:text-sm">
             Full Stack Developer & DevOps Professional
           </div>
 
@@ -52,8 +52,8 @@
              :initial="{ y: 40, opacity: 0 }"
              :visible="{ y: 0, opacity: 1 }"
              :delay="600">
-            <h3 class="mb-3 text-base font-bold uppercase text-blue-200 sm:text-lg">About Me</h3>
-            <p class="about-text text-sm leading-relaxed text-white/90 sm:text-base lg:text-[1.02rem]">
+            <h3 class="mb-3 text-base font-bold uppercase text-white sm:text-lg">About Me</h3>
+            <p class="about-text text-sm leading-relaxed text-white sm:text-base lg:text-[1.02rem]">
               Hi, I'm Johnray! I transitioned from a law enforcement background into technology, where I have built a solid career over the past 8+ years as a Full Stack Developer and DevOps Professional. I leverage my full stack development expertise combined with cybersecurity knowledge to investigate and solve complex security challenges. I have progressive experience creating secure, scalable systems and AI-powered solutions for major government organizations such as the Department of Health (DOH) and the National Bureau of Investigation (NBI). I specialize in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices. Now, I am excited to explore new opportunities in the tech industry and expand my horizons by delivering innovative technology solutions.
             </p>
           </div>
