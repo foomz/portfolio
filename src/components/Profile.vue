@@ -107,8 +107,8 @@
                :visible="{ y: 0, opacity: 1 }"
                :delay="800 + index * 100">
               <div class="mb-2 text-2xl sm:text-3xl">{{ highlight.icon }}</div>
-              <h4 class="mb-1 text-sm font-semibold text-blue-400 sm:text-base">{{ highlight.title }}</h4>
-              <p class="text-xs leading-relaxed text-blue-300 sm:text-sm">{{ highlight.description }}</p>
+              <h4 class="mb-1 text-[clamp(0.875rem,2.5vw,1rem)] font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent sm:text-base">{{ highlight.title }}</h4>
+              <p class="text-xs leading-relaxed bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent sm:text-sm">{{ highlight.description }}</p>
             </div>
           </div>
         </div>
