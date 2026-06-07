@@ -74,27 +74,29 @@
       </div>
     </nav>
 
-    <main class="pt-16 overflow-x-hidden">
+    <main class="pt-16">
         <!-- Hero Profile Section -->
-        <Profile /> <!-- Render the Profile Component -->
+        <section id="profile">
+          <Profile /> <!-- Render the Profile Component -->
+        </section>
 
         <!-- Work Experience Section -->
-        <section id="experience" class="scroll-mt-16">
+        <section id="experience">
           <WorkExperience /> <!-- Render the Work Experience Component with experience prop -->
         </section>
 
         <!-- Work Gallery Section -->
-        <section id="gallery" class="scroll-mt-16">
+        <section id="gallery">
           <WorkGallery /> <!-- Render the Work Gallery Component -->
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="scroll-mt-16">
+        <section id="projects">
           <Projects /> <!-- Render the Projects Component -->
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="scroll-mt-16">
+        <section id="skills">
           <Skills /> <!-- Render the Skills Component -->
         </section>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 overflow-hidden" id="profile">
+  <section class="profile-section relative min-h-[calc(100svh-4rem)] scroll-mt-16 flex flex-col items-center justify-start lg:justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 overflow-x-hidden py-8 sm:py-10 md:py-12 lg:py-14" id="profile">
     <!-- Video Background -->
     <video 
       autoplay 
@@ -12,7 +12,7 @@
     </video>
 
     <!-- Animated Background -->
-    <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="absolute -inset-10 opacity-20">
         <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
         <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
@@ -21,95 +21,102 @@
     </div>
 
     <!-- Main Content -->
-    <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-      <!-- Profile Section -->
-      <div class="mb-6 sm:mb-8 md:mb-12 lg:mb-16"
-         v-motion
-         :initial="{ y: 100, opacity: 0 }"
-         :visible="{ y: 0, opacity: 1 }"
-         :delay="200">
-      
-      <!-- Profile Image -->
-      <div class="relative mb-6 sm:mb-8 inline-block">
-        <div class="w-40 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 mx-auto rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm hover:scale-105 transition-all duration-500"
+    <div class="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid min-h-[calc(100svh-11rem)] items-center gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:gap-12 xl:gap-16">
+        <!-- Hero Copy -->
+        <div class="order-2 text-center text-white lg:order-1 lg:text-left"
            v-motion
-           :initial="{ scale: 0, opacity: 0 }"
-           :visible="{ scale: 1, opacity: 1 }"
-           :delay="400">
-        <img src="/public/YoungMe.png" alt="Johnray M. De Luna" class="w-full h-full object-cover">
-        <!-- <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover"> --> <!-- Temporary Disabled  -->
-        </div>
-        <!-- Status Indicator -->
-        <div class="absolute -bottom-2 -right-2 w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-        <div class="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
-        </div>
-      </div>
-
-      <!-- Name and Title -->
-      <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-        <TypeWriter
-        :texts="['Johnray M. De Luna']"
-        tag="h1"
-        class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight"
-        />
-        <div class="space-y-2">
-        <TypeWriter
-          :texts="['Full Stack Developer & DevOps Professional', '8+ Years Experience in Government Systems & AI Solutions']"
-          tag="p"
-          class="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-blue-200"
-          :repeat="false"
-        />
-        </div>
-      </div>
-
-      <!-- Professional Summary -->
-      <div class="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-5 md:p-6 hover:bg-white/10 transition-all duration-300"
-         v-motion
-         :initial="{ y: 50, opacity: 0 }"
-         :visible="{ y: 0, opacity: 1 }"
-         :delay="600">
-        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-blue-300">About Me</h3>
-        <p class="text-xs sm:text-sm md:text-base text-white-200 leading-relaxed text-left mb-4">
-        Hi, I'm Johnray! I transitioned from a law enforcement background into technology, where I have built a solid career over the past 8+ years as a Full Stack Developer and DevOps Professional. I leverage my full stack development expertise combined with cybersecurity knowledge to investigate and solve complex security challenges. I have progressive experience creating secure, scalable systems and AI-powered solutions for major government organizations such as the Department of Health (DOH) and the National Bureau of Investigation (NBI). I specialize in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices. Now, I am excited to explore new opportunities in the tech industry and expand my horizons by delivering innovative technology solutions.
-        </p>
-      </div>
-
-      <!-- Key Highlights -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12 max-w-5xl mx-auto">
-        <div v-for="(highlight, index) in highlights" 
-           :key="highlight.title"
-           class="p-4 sm:p-5 md:p-6 bg-white/1 backdrop-blur-sm rounded-lg sm:rounded-xl hover:bg-white/10 transition-all duration-300"
-           v-motion
-           :initial="{ y: 30, opacity: 0 }"
+           :initial="{ y: 80, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }"
-           :delay="800 + index * 100">
-        <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">{{ highlight.icon }}</div>
-        <h4 class="text-base sm:text-lg font-semibold text-blue-300 mb-2">{{ highlight.title }}</h4>
-        <p class="text-xs sm:text-sm text-white-200">{{ highlight.description }}</p>
-        </div>
-      </div>
-      </div>
+           :delay="200">
+          <div class="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase text-blue-100 backdrop-blur-xsm sm:text-sm">
+            Full Stack Developer & DevOps Professional
+          </div>
 
-      <!-- Social Links -->
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4"
-         v-motion
-         :initial="{ y: 50, opacity: 0 }"
-         :visible="{ y: 0, opacity: 1 }"
-         :delay="1000">
-      <a v-for="social in socialLinks" 
-         :key="social.name"
-         :href="social.url" 
-         :target="social.name === 'Email' ? '_self' : '_blank'"
-         class="flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group text-xs sm:text-sm md:text-base">
-        <EnvelopeIcon v-if="social.name === 'Email'" class="h-4 sm:h-5 w-4 sm:w-5 text-white group-hover:text-blue-300 transition-colors" />
-        <div v-else v-html="social.icon" class="h-4 sm:h-5 w-4 sm:w-5 text-white group-hover:text-blue-300 transition-colors"></div>
-        <span class="text-white group-hover:text-blue-300 transition-colors hidden sm:inline">{{ social.name }}</span>
-      </a>
+          <TypeWriter
+            :texts="['Johnray M. De Luna']"
+            tag="h1"
+            class="mx-auto max-w-4xl text-[clamp(2.4rem,10vw,4.75rem)] font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent leading-[1.05] break-words lg:mx-0"
+          />
+
+          <TypeWriter
+            :texts="['8+ Years Experience in Government Systems & AI Solutions']"
+            tag="p"
+            class="mt-3 mx-auto max-w-3xl text-[clamp(1rem,3.8vw,1.65rem)] font-semibold text-blue-100 leading-snug lg:mx-0"
+            :repeat="false"
+          />
+
+          <!-- Professional Summary -->
+          <div class="mx-auto mt-6 max-w-3xl border-l-0 border-blue-300/60 text-left lg:mx-0 lg:border-l-4 lg:pl-5"
+             v-motion
+             :initial="{ y: 40, opacity: 0 }"
+             :visible="{ y: 0, opacity: 1 }"
+             :delay="600">
+            <h3 class="mb-3 text-base font-bold uppercase text-blue-200 sm:text-lg">About Me</h3>
+            <p class="about-text text-sm leading-relaxed text-white/90 sm:text-base lg:text-[1.02rem]">
+              Hi, I'm Johnray! I transitioned from a law enforcement background into technology, where I have built a solid career over the past 8+ years as a Full Stack Developer and DevOps Professional. I leverage my full stack development expertise combined with cybersecurity knowledge to investigate and solve complex security challenges. I have progressive experience creating secure, scalable systems and AI-powered solutions for major government organizations such as the Department of Health (DOH) and the National Bureau of Investigation (NBI). I specialize in Laravel, Django, React, Next.js, Docker, CI/CD, AWS, TensorFlow, and modern DevOps practices. Now, I am excited to explore new opportunities in the tech industry and expand my horizons by delivering innovative technology solutions.
+            </p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3 lg:justify-start"
+             v-motion
+             :initial="{ y: 40, opacity: 0 }"
+             :visible="{ y: 0, opacity: 1 }"
+             :delay="1000">
+            <a v-for="social in socialLinks" 
+               :key="social.name"
+               :href="social.url" 
+               :target="social.name === 'Email' ? '_self' : '_blank'"
+               class="flex min-h-10 items-center space-x-2 px-3 py-2 text-xs sm:px-4 sm:py-2.5 sm:text-sm md:px-5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-300 group">
+              <EnvelopeIcon v-if="social.name === 'Email'" class="h-4 w-4 sm:h-5 sm:w-5 text-white group-hover:text-blue-300 transition-colors" />
+              <div v-else v-html="social.icon" class="h-4 w-4 sm:h-5 sm:w-5 text-white group-hover:text-blue-300 transition-colors"></div>
+              <span class="text-white group-hover:text-blue-300 transition-colors hidden sm:inline">{{ social.name }}</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual and Highlights -->
+        <div class="order-1 flex flex-col items-center text-center text-white lg:order-2 lg:items-end"
+           v-motion
+           :initial="{ y: 80, opacity: 0 }"
+           :visible="{ y: 0, opacity: 1 }"
+           :delay="350">
+          <div class="relative mb-5 inline-block sm:mb-6 lg:mr-6">
+            <div class="profile-avatar w-32 h-32 min-[380px]:w-36 min-[380px]:h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-64 lg:h-64 mx-auto rounded-full overflow-hidden border-4 border-white/25 shadow-2xl backdrop-blur-sm transition-all duration-500"
+               v-motion
+               :initial="{ scale: 0, opacity: 0 }"
+               :visible="{ scale: 1, opacity: 1 }"
+               :delay="400">
+              <img src="/public/YoungMe.png" alt="Johnray M. De Luna" class="w-full h-full object-cover">
+              <!-- <img src="https://i.imgur.com/GLuFwKt.jpeg" alt="Johnray M. De Luna" class="w-full h-full object-cover"> --> <!-- Temporary Disabled  -->
+            </div>
+            <!-- Status Indicator -->
+            <div class="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-7 sm:w-8 md:w-9 h-7 sm:h-8 md:h-9 bg-green-500 rounded-full border-4 border-white flex items-center justify-center shadow-lg">
+              <div class="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-green-300 rounded-full animate-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Key Highlights -->
+          <div class="grid w-full max-w-xl grid-cols-1 gap-3 sm:grid-cols-3 lg:max-w-md lg:grid-cols-1">
+            <div v-for="(highlight, index) in highlights" 
+               :key="highlight.title"
+               class="rounded-lg p-4 text-left backdrop-blur-xsm transition-all duration-300 hover:-translate-y-1"
+               v-motion
+               :initial="{ y: 30, opacity: 0 }"
+               :visible="{ y: 0, opacity: 1 }"
+               :delay="800 + index * 100">
+              <div class="mb-2 text-2xl sm:text-3xl">{{ highlight.icon }}</div>
+              <h4 class="mb-1 text-sm font-semibold text-white sm:text-base">{{ highlight.title }}</h4>
+              <p class="text-xs leading-relaxed text-white sm:text-sm">{{ highlight.description }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="hidden lg:block absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
       <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
@@ -221,5 +228,21 @@ const GlobeIcon = {
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+</style>
+<style scoped>
+.profile-avatar{
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.profile-avatar:hover{
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+.about-text{
+  transition: color 250ms ease, transform 250ms ease;
+}
+.about-text:hover{
+  color: #dbeafe; /* lighter blue on hover */
+  transform: translateY(-4px);
 }
 </style>
