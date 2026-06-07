@@ -107,8 +107,8 @@
                :visible="{ y: 0, opacity: 1 }"
                :delay="800 + index * 100">
               <div class="mb-2 text-2xl sm:text-3xl">{{ highlight.icon }}</div>
-              <h4 class="mb-1 text-sm font-semibold text-white sm:text-base">{{ highlight.title }}</h4>
-              <p class="text-xs leading-relaxed text-white sm:text-sm">{{ highlight.description }}</p>
+              <h4 class="mb-1 text-sm font-semibold text-blue-300 sm:text-base">{{ highlight.title }}</h4>
+              <p class="text-xs leading-relaxed text-gray-400 sm:text-sm">{{ highlight.description }}</p>
             </div>
           </div>
         </div>
