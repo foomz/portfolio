@@ -24,7 +24,7 @@
           v-motion
           :initial="{ y: 30, opacity: 0 }"
           :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 600 } }">
-        Professional Experience
+        Professional Experience Gallery
       </h3>
       <p class="work-gallery-subtitle text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2"
          v-motion
