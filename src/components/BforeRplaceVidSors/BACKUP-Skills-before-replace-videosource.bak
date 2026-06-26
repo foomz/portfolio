@@ -1,63 +1,61 @@
 <template>
-  <section class="skills-section py-20 px-4 relative overflow-hidden transition-all duration-300">
-    <div class="video-background" aria-hidden="true">
-      <iframe
-        src="https://streamable.com/e/wvx8ta?autoplay=1&muted=1"
-        title="Skills background video"
-        allow="fullscreen;autoplay"
-        allowfullscreen
-        scrolling="no"
-        tabindex="-1"
-        class="video-background__frame"
-      ></iframe>
-    </div>
+  <section class="py-20 px-4 relative overflow-hidden transition-all duration-300">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    >
+      <source src="/SkillsVid.mp4" type="video/mp4">
+    </video>
 
     <div class="absolute inset-0 bg-gradient-to-br from-gray-50/90 via-blue-50/85 to-indigo-100/85 dark:from-gray-900/90 dark:via-purple-900/85 dark:to-gray-900/90 z-[1]"></div>
 
-    <div class="skills-content max-w-7xl mx-auto relative z-10">
+    <div class="max-w-7xl mx-auto relative z-10">
       <!-- Header -->
-      <div class="skills-header text-center mb-16"
+      <div class="text-center mb-16"
            v-motion
            :initial="{ y: 50, opacity: 0 }"
            :visible="{ y: 0, opacity: 1 }">
-        <h2 class="skills-title text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Core Competencies
         </h2>
-        <p class="skills-subtitle text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Comprehensive technical expertise spanning full-stack development, DevOps, AI/ML, and cybersecurity
         </p>
       </div>
 
       <!-- Skills Grid -->
-      <div class="skills-grid grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
         <div v-for="(category, index) in coreCompetencies"
              :key="index"
-             class="skill-card-wrap relative group"
+             class="relative group"
              v-motion
              :initial="{ y: 50, opacity: 0 }"
              :visible="{ y: 0, opacity: 1 }"
              :delay="index * 150">
           
           <!-- Category Card -->
-          <div class="skill-card h-full bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-gray-200 dark:border-gray-700 group-hover:border-blue-300 dark:group-hover:border-blue-500">
+          <div class="h-full bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-gray-200 dark:border-gray-700 group-hover:border-blue-300 dark:group-hover:border-blue-500">
             <!-- Category Header -->
-            <div class="skill-card__header flex items-center mb-6">
-              <div class="skill-card__icon w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                <span class="skill-card__emoji text-2xl">{{ category.icon }}</span>
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <span class="text-2xl">{{ category.icon }}</span>
               </div>
-              <div class="skill-card__heading min-w-0">
-                <h3 class="skill-card__title text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {{ category.title }}
                 </h3>
-                <p class="skill-card__count text-sm text-gray-500 dark:text-gray-400">{{ category.count }} Technologies</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ category.count }} Technologies</p>
               </div>
             </div>
 
             <!-- Skills Tags -->
-            <div class="skill-tags flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2">
               <span v-for="(skill, skillIndex) in category.skills" 
                     :key="skill"
-                    class="skill-tag inline-block px-3 py-1 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105"
+                    class="inline-block px-3 py-1 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105"
                     :class="getSkillClass(skillIndex)"
                     v-motion
                     :initial="{ scale: 0, opacity: 0 }"
@@ -68,8 +66,8 @@
             </div>
 
             <!-- Proficiency Indicator -->
-            <div class="skill-progress mt-6 pt-4 border-t border-gray-200 dark:border-gray-600">
-              <div class="skill-progress__meta flex items-center justify-between mb-2">
+            <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-600">
+              <div class="flex items-center justify-between mb-2">
                 <span class="text-sm text-gray-600 dark:text-gray-400">Proficiency</span>
                 <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">{{ category.proficiency }}%</span>
               </div>
@@ -182,61 +180,3 @@ const getSkillClass = (index) => {
   return classes[index % classes.length]
 }
 </script>
-
-<style scoped>
-/* Video Background */
-.video-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  background-color: #111827;
-  container-type: size;
-}
-
-.video-background__frame {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: max(100vw, 56.25vh);
-  height: max(100vh, 177.778vw);
-  min-width: 100%;
-  min-height: 100%;
-  border: 0;
-  transform: translate(-50%, -50%);
-}
-
-.skills-section {
-  min-height: 100svh;
-}
-
-@supports (width: 100cqw) {
-  .video-background__frame {
-    width: max(100cqw, 56.25cqh);
-    height: max(100cqh, 177.778cqw);
-  }
-}
-
-@supports not (width: 100cqw) {
-  @media (max-aspect-ratio: 9 / 16) {
-    .video-background__frame {
-      width: 56.25vh;
-      height: 100vh;
-    }
-  }
-
-  @media (min-aspect-ratio: 9 / 16) {
-    .video-background__frame {
-      width: 100vw;
-      height: 177.778vw;
-    }
-  }
-}
-
-@supports not (height: 100svh) {
-  .skills-section {
-    min-height: 100vh;
-  }
-}
-</style>

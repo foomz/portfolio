@@ -1,16 +1,15 @@
 <template>
-  <section class="experience-section py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  <section class="py-10 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" id="experience">
     <!-- Video Background -->
-    <div class="video-background" aria-hidden="true">
-      <iframe
-        src="https://streamable.com/e/zdat7d?autoplay=1&muted=1"
-        title="Work experience background video"
-        allow="fullscreen;autoplay"
-        allowfullscreen
-        tabindex="-1"
-        class="video-background__frame"
-      ></iframe>
-    </div>
+    <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    >
+      <source src="/WorkExperienceVid.mp4" type="video/mp4">
+    </video>
 
     <!-- Gradient Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 z-5 opacity-85"></div>
@@ -29,14 +28,14 @@
       </h2>
 
       <!-- Timeline Container -->
-      <div class="experience-timeline max-w-6xl mx-auto relative px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto relative px-4 sm:px-6 lg:px-8">
         <!-- Vertical Timeline Line -->
         <div class="absolute left-6 sm:left-8 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-400 via-blue-500 to-indigo-600"></div>
 
         <!-- Company Experience Cards -->
         
         <!-- Department of Health - Current Position -->
-        <div class="experience-item relative flex items-center mb-8 sm:mb-12 lg:mb-16"
+        <div class="relative flex items-center mb-8 sm:mb-12 lg:mb-16"
              v-motion
              :initial="{ x: -100, opacity: 0 }"
              :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 200 } }">
@@ -50,12 +49,12 @@
           </div>
 
           <!-- Content Card -->
-          <div class="experience-card-shell experience-card-shell--left w-full md:w-5/12 ml-12 sm:ml-16 md:ml-0 md:mr-8">
-            <div class="experience-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
+          <div class="w-full md:w-5/12 ml-12 sm:ml-16 md:ml-0 md:mr-8">
+            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
               <!-- Company Header -->
               <div class="mb-6">
-                <div class="company-header flex items-center mb-4">
-                  <div class="company-logo w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 overflow-hidden">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 overflow-hidden">
                     <img src="https://i.imgur.com/DWLi59S.png" alt="Department of Health" class="w-full h-full object-cover" />
                   </div>
                   <div class="min-w-0 flex-1">
@@ -64,14 +63,14 @@
                   </div>
                 </div>
                 
-                <div class="meta-badges flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <span class="meta-pill flex items-center bg-green-100 dark:bg-green-900 px-3 py-1 rounded-full">
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <span class="flex items-center bg-green-100 dark:bg-green-900 px-3 py-1 rounded-full">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                     </svg>
                     Sta Cruz, Manila
                   </span>
-                  <span class="meta-pill flex items-center bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+                  <span class="flex items-center bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                     </svg>
@@ -168,7 +167,7 @@
         </div> <!-- End of Department of Health Work Experience Card -->
         
         <!-- National Bureau of Investigation - Previous Position -->
-        <div class="experience-item relative flex items-center md:flex-row-reverse mb-8 sm:mb-12 lg:mb-16"
+        <div class="relative flex items-center md:flex-row-reverse mb-8 sm:mb-12 lg:mb-16"
              v-motion
              :initial="{ x: 100, opacity: 0 }"
              :visible="{ x: 0, opacity: 1, transition: { duration: 800, delay: 400 } }">
@@ -177,23 +176,23 @@
           <div class="absolute left-6 sm:left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full border-2 sm:border-4 border-white dark:border-gray-800 shadow-lg z-10"></div>
 
           <!-- Content Card -->
-          <div class="experience-card-shell experience-card-shell--right w-full md:w-5/12 ml-12 sm:ml-16 md:ml-8 md:mr-0 relative">
-            <div class="experience-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
+          <div class="w-full md:w-5/12 ml-12 sm:ml-16 md:ml-8 md:mr-0 relative">
+            <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 transform">
               
               <!-- Right Side Image - Positioned at outside right top of card -->
-              <div class="floating-gallery z-30">
-                <img src="/WorkExperienceImages/Me1.jpg" alt="NBI Work Experience" width="150" height="150" class="floating-gallery__image rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me2.jpg" alt="NBI Work Experience" width="120" height="120" class="floating-gallery__image rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me3.jpg" alt="NBI Work Experience" width="120" height="120" class="floating-gallery__image rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me4.jpg" alt="NBI Work Experience" width="120" height="120" class="floating-gallery__image rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me5.jpg" alt="NBI Work Experience" width="120" height="120" class="floating-gallery__image rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
-                <img src="/WorkExperienceImages/Me6.jpg" alt="NBI Work Experience" width="120" height="120" class="floating-gallery__image rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+              <div class="hidden md:block absolute -center-0 -right-52 z-30 flex flex-col space-y-8">
+                <img src="/WorkExperienceImages/Me1.jpg" alt="NBI Work Experience" width="150" height="150" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+                <img src="/WorkExperienceImages/Me2.jpg" alt="NBI Work Experience" width="120" height="120" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+                <img src="/WorkExperienceImages/Me3.jpg" alt="NBI Work Experience" width="120" height="120" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+                <img src="/WorkExperienceImages/Me4.jpg" alt="NBI Work Experience" width="120" height="120" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+                <img src="/WorkExperienceImages/Me5.jpg" alt="NBI Work Experience" width="120" height="120" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
+                <img src="/WorkExperienceImages/Me6.jpg" alt="NBI Work Experience" width="120" height="120" class="w-50 h-50 lg:w-50 lg:h-50 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 transform" />
               </div>
 
               <!-- Company Header -->
               <div class="mb-6">
-                <div class="company-header flex items-center mb-4">
-                  <div class="company-logo company-logo--nbi w-15 h-20 sm:w-15 sm:h-20 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 overflow-hidden">
+                <div class="flex items-center mb-4">
+                  <div class="w-15 h-20 sm:w-15 sm:h-20 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 overflow-hidden">
                     <img src="https://i.imgur.com/xl5tD04.png" alt="National Bureau of Investigation" class="w-full h-full object-cover" />
                   </div>
                   <div class="min-w-0 flex-1">
@@ -202,20 +201,20 @@
                   </div>
                 </div>
                 
-                <div class="meta-badges flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <span class="meta-pill flex items-center bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <span class="flex items-center bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                     </svg>
                     Main Building, Manila
                   </span>
-                  <span class="meta-pill flex items-center bg-indigo-100 dark:bg-indigo-900 px-3 py-1 rounded-full">
+                  <span class="flex items-center bg-indigo-100 dark:bg-indigo-900 px-3 py-1 rounded-full">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
                     </svg>
                     March 2018 – December 2024
                   </span>
-                  <span class="meta-pill bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-xs font-medium">
+                  <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-xs font-medium">
                     7 Years Experience
                   </span>
                 </div>
@@ -343,187 +342,6 @@
 </script>
 
 <style scoped>
-
-/* Video Background */
-.video-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  container-type: size;
-}
-
-.video-background__frame {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: max(100vw, 56.25vh);
-  height: max(100vh, 177.778vw);
-  border: 0;
-  transform: translate(-50%, -50%);
-}
-
-@supports (width: 100cqw) {
-  .video-background__frame {
-    width: max(100cqw, 56.25cqh);
-    height: max(100cqh, 177.778cqw);
-  }
-}
-
-/* Responsive experience cards */
-.experience-section {
-  container-type: inline-size;
-}
-
-.experience-timeline {
-  width: min(100%, 92rem);
-}
-
-.experience-item {
-  min-width: 0;
-}
-
-.experience-card-shell {
-  min-width: 0;
-}
-
-.experience-card {
-  width: 100%;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.company-header {
-  min-width: 0;
-  gap: 0.75rem;
-}
-
-.company-logo {
-  width: clamp(3rem, 8vw, 3.75rem);
-  height: clamp(3rem, 8vw, 3.75rem);
-  margin-right: 0;
-}
-
-.company-logo--nbi {
-  width: clamp(3rem, 8vw, 3.75rem);
-  height: clamp(4rem, 11vw, 5rem);
-}
-
-.meta-badges {
-  gap: 0.5rem;
-}
-
-.meta-pill {
-  max-width: 100%;
-  min-width: 0;
-  line-height: 1.35;
-}
-
-.floating-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.floating-gallery__image {
-  width: 100%;
-  aspect-ratio: 1;
-  min-width: 0;
-}
-
-@media (max-width: 420px) {
-  .experience-timeline {
-    padding-left: 0.75rem;
-    padding-right: 0;
-  }
-
-  .experience-card-shell {
-    margin-left: 2.75rem;
-  }
-
-  .experience-card {
-    padding: 1rem;
-  }
-
-  .company-header {
-    align-items: flex-start;
-  }
-
-  .meta-pill {
-    width: 100%;
-    align-items: flex-start;
-    border-radius: 0.75rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .experience-timeline {
-    max-width: min(72rem, calc(100vw - 3rem));
-  }
-
-  .experience-card-shell {
-    width: min(48%, 38rem);
-  }
-
-  .experience-card-shell--left {
-    margin-right: clamp(1.5rem, 3vw, 3rem);
-  }
-
-  .experience-card-shell--right {
-    margin-left: clamp(1.5rem, 3vw, 3rem);
-  }
-
-  .floating-gallery {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .experience-card {
-    padding: clamp(1.5rem, 2vw, 2rem);
-  }
-}
-
-@media (min-width: 1280px) {
-  .experience-timeline {
-    max-width: min(78rem, calc(100vw - 5rem));
-  }
-
-  .experience-card-shell {
-    width: min(46%, 42rem);
-  }
-}
-
-@media (min-width: 1440px) {
-  .floating-gallery {
-    position: absolute;
-    top: 0;
-    right: clamp(-10rem, -8vw, -7rem);
-    width: clamp(5.5rem, 6vw, 7.5rem);
-    grid-template-columns: 1fr;
-    gap: clamp(0.75rem, 1.2vw, 1.25rem);
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: 1536px) {
-  .floating-gallery {
-    right: clamp(-11rem, -8vw, -8rem);
-  }
-}
-
-@media (min-width: 1720px) {
-  .experience-timeline {
-    max-width: min(86rem, calc(100vw - 10rem));
-  }
-
-  .experience-card-shell {
-    width: min(44%, 46rem);
-  }
-}
-
 /* Animation delays for staggered effects */
 .animation-delay-2000 {
   animation-delay: 2s;

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 px-4 relative overflow-hidden transition-all duration-300" id="projects">
+  <section class="py-20 px-4 relative overflow-hidden transition-all duration-300">
     <video
       autoplay
       loop

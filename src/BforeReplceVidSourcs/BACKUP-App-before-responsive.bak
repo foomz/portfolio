@@ -1,39 +1,39 @@
 <template>
-  <div class="min-h-screen w-full min-w-0 overflow-x-hidden bg-gray-200 text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" @contextmenu.prevent>
+  <div class="min-h-screen bg-gray-200 dark:bg-gray-900 transition-colors duration-300" @contextmenu.prevent>
     <!-- Loading Spinner -->
     <Spinner :isLoading="isLoading" />
 
     <!-- Navigation with scroll effect -->
-    <nav class="fixed top-0 z-10 w-full bg-white/95 shadow-lg backdrop-blur transition-all duration-300 dark:bg-gray-800/95"
+    <nav class="bg-white dark:bg-gray-800 shadow-lg w-full z-10 transition-all duration-300 fixed top-0"
           :class="{ 'py-2': scrolled }"
           ref="navbar">
-      <div class="mx-auto w-full max-w-screen-2xl px-3 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
-        <div class="flex h-14 items-center justify-between gap-3 sm:h-16 lg:h-[4.5rem] xl:h-20">
-          <div class="flex min-w-0 items-center space-x-2 sm:space-x-3">
-            <img src="https://i.imgur.com/Ap9Seoc.png" alt="Profile" class="h-8 w-8 flex-none rounded-full object-cover sm:h-10 sm:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12">
-            <h1 class="truncate text-base font-bold dark:text-white sm:text-xl lg:text-2xl">Portfolio</h1>
+      <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex items-center space-x-2">
+            <img src="https://i.imgur.com/Ap9Seoc.png" alt="Profile" class="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover">
+            <h1 class="text-lg sm:text-xl font-bold dark:text-white">Portfolio</h1>
           </div>
           <!-- Desktop/Tablet Navigation -->
-          <div class="hidden lg:flex items-center justify-end gap-1 xl:gap-2 2xl:gap-3">
+          <div class="hidden lg:flex items-center justify-end space-x-2 xl:space-x-4">
             <button @click="toggleDarkMode" 
-                    class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 xl:h-11 xl:w-11">
+                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
               <SunIcon v-if="isDark" class="h-5 w-5 xl:h-6 xl:w-6 text-yellow-500" />
               <MoonIcon v-else class="h-5 w-5 xl:h-6 xl:w-6 text-gray-600" />
             </button>
-            <a href="#profile" class="rounded-md px-2 py-2 text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 xl:px-3 xl:text-base 2xl:px-4" @click.prevent="navigateToSection('profile')">Profile</a>
-            <a href="#experience" class="rounded-md px-2 py-2 text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 xl:px-3 xl:text-base 2xl:px-4" @click.prevent="navigateToSection('experience')">Experience</a>
-            <a href="#gallery" class="rounded-md px-2 py-2 text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 xl:px-3 xl:text-base 2xl:px-4" @click.prevent="navigateToSection('gallery')">Gallery</a>
-            <a href="#skills" class="rounded-md px-2 py-2 text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 xl:px-3 xl:text-base 2xl:px-4" @click.prevent="navigateToSection('skills')">Skills</a>
-            <a href="#projects" class="rounded-md px-2 py-2 text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 xl:px-3 xl:text-base 2xl:px-4" @click.prevent="navigateToSection('projects')">Projects</a>
+            <a href="#profile" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Profile</a>
+            <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Experience</a>
+            <a href="#gallery" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Gallery</a>
+            <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Skills</a>
+            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Projects</a>
           </div>
           <!-- Tablet Navigation -->
-          <div class="hidden md:flex lg:hidden items-center justify-end gap-1">
+          <div class="hidden md:flex lg:hidden items-center justify-end space-x-1">
             <button @click="toggleDarkMode" 
-                    class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
               <SunIcon v-if="isDark" class="h-5 w-5 text-yellow-500" />
               <MoonIcon v-else class="h-5 w-5 text-gray-600" />
             </button>
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="flex h-10 w-10 items-center justify-center rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
               <svg v-if="!mobileMenuOpen" class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -43,13 +43,13 @@
             </button>
           </div>
           <!-- Mobile Hamburger -->
-          <div class="flex items-center gap-1.5 md:hidden">
+          <div class="md:hidden flex items-center space-x-2">
             <button @click="toggleDarkMode" 
-                    class="flex h-9 w-9 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+                    class="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
               <SunIcon v-if="isDark" class="h-5 w-5 text-yellow-500" />
               <MoonIcon v-else class="h-5 w-5 text-gray-600" />
             </button>
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="flex h-9 w-9 items-center justify-center rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
               <svg v-if="!mobileMenuOpen" class="h-6 w-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -61,42 +61,43 @@
         </div>
         <!-- Mobile/Tablet Menu -->
         <transition name="slide-fade">
-          <div v-if="mobileMenuOpen" class="absolute right-0 top-14 z-20 w-[min(20rem,calc(100vw-1rem))] rounded-bl-lg bg-white shadow-xl dark:bg-gray-800 sm:top-16 sm:w-80 lg:hidden">
-            <div class="flex flex-col items-end space-y-1 px-3 py-4 sm:px-4">
-              <a href="#profile" class="w-full rounded-md px-4 py-3 text-right text-base font-medium text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:text-lg" @click.prevent="navigateToSection('profile')">Profile</a>
-              <a href="#experience" class="w-full rounded-md px-4 py-3 text-right text-base font-medium text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:text-lg" @click.prevent="navigateToSection('experience')">Work Experience</a>
-              <a href="#gallery" class="w-full rounded-md px-4 py-3 text-right text-base font-medium text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:text-lg" @click.prevent="navigateToSection('gallery')">Work Gallery</a>
-              <a href="#skills" class="w-full rounded-md px-4 py-3 text-right text-base font-medium text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:text-lg" @click.prevent="navigateToSection('skills')">Skills</a>
-              <a href="#projects" class="w-full rounded-md px-4 py-3 text-right text-base font-medium text-gray-700 transition-all duration-300 hover:bg-gray-50 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:text-lg" @click.prevent="navigateToSection('projects')">Projects</a>
+          <div v-if="mobileMenuOpen" class="lg:hidden absolute top-16 right-0 w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-800 shadow-xl rounded-bl-lg z-20">
+            <div class="flex flex-col items-end py-4 pr-4 space-y-1">
+              <a href="#profile" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Profile</a>
+              <a href="#experience" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Work Experience</a>
+              <a href="#gallery" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Work Gallery</a>
+              <a href="#skills" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Skills</a>
+              <a href="#projects" class="w-full text-right text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-3 rounded-md text-base font-medium transition-all duration-300" @click="mobileMenuOpen = false">Projects</a>
             </div>
           </div>
         </transition>
       </div>
     </nav>
 
-    <main class="w-full min-w-0 overflow-x-hidden pt-14 sm:pt-16 lg:pt-[4.5rem] xl:pt-20">
+    <main class="pt-16 overflow-x-hidden">
         <!-- Hero Profile Section -->
-        <Profile data-nav-section="profile" /> <!-- Render the Profile Component -->
+        <Profile /> <!-- Render the Profile Component -->
 
         <!-- Work Experience Section -->
-        <section id="experience" data-nav-section="experience" class="scroll-mt-14 sm:scroll-mt-16 lg:scroll-mt-[4.5rem] xl:scroll-mt-20">
+        <section id="experience" class="scroll-mt-16">
           <WorkExperience /> <!-- Render the Work Experience Component with experience prop -->
         </section>
 
         <!-- Work Gallery Section -->
-        <section id="gallery" data-nav-section="gallery" class="scroll-mt-14 sm:scroll-mt-16 lg:scroll-mt-[4.5rem] xl:scroll-mt-20">
+        <section id="gallery" class="scroll-mt-16">
           <WorkGallery /> <!-- Render the Work Gallery Component -->
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" data-nav-section="projects" class="scroll-mt-14 sm:scroll-mt-16 lg:scroll-mt-[4.5rem] xl:scroll-mt-20">
+        <section id="projects" class="scroll-mt-16">
           <Projects /> <!-- Render the Projects Component -->
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" data-nav-section="skills" class="scroll-mt-14 sm:scroll-mt-16 lg:scroll-mt-[4.5rem] xl:scroll-mt-20">
+        <section id="skills" class="scroll-mt-16">
           <Skills /> <!-- Render the Skills Component -->
         </section>
+
     </main>
 
     <!-- Footer Using now at Skills.vue Component--> 
@@ -134,7 +135,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick, onMounted, onUnmounted } from 'vue' // Importing necessary Vue functions
+import { ref, onMounted, onUnmounted } from 'vue' // Importing necessary Vue functions
 // Mobile menu state
 const mobileMenuOpen = ref(false)
 const isLoading = ref(true)
@@ -149,8 +150,6 @@ import Spinner from './components/ui/Spinner.vue' // Spinner for loading state
 
 const scrolled = ref(false)
 const isDark = ref(true)
-const navbar = ref(null)
-let loadingTimer = null
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50
@@ -165,25 +164,6 @@ const toggleDarkMode = () => {
   }
 };
 
-const navigateToSection = async (sectionId) => {
-  mobileMenuOpen.value = false
-  await nextTick()
-
-  const section = document.querySelector(`[data-nav-section="${sectionId}"]`) || document.getElementById(sectionId)
-
-  if (!section) return
-
-  const navHeight = navbar.value?.getBoundingClientRect().height || 0
-  const targetTop = section.getBoundingClientRect().top + window.scrollY - navHeight - 8
-
-  window.scrollTo({
-    top: Math.max(targetTop, 0),
-    behavior: 'smooth'
-  })
-
-  window.history.replaceState(null, '', `#${sectionId}`)
-}
-
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 
@@ -194,17 +174,11 @@ onMounted(() => {
   trackVisitor().catch(console.error);
 
   // Hide loading spinner after components are rendered (2.5 seconds)
-  loadingTimer = setTimeout(() => {
+  const loadingTimer = setTimeout(() => {
     isLoading.value = false
   }, 2500)
-});
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-
-  if (loadingTimer) {
-    clearTimeout(loadingTimer)
-  }
+  return () => clearTimeout(loadingTimer)
 });
 
 // projects array moved to Projects.vue
