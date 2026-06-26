@@ -20,18 +20,12 @@
     <div class="absolute bottom-1/4 left-1/3 w-24 h-24 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 bg-indigo-300 dark:bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000 z-5"></div>
 
     <div class="work-gallery-content relative z-10 w-full flex flex-col items-center px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-      <h3 class="work-gallery-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2 sm:mb-3 md:mb-4 lg:mb-6 px-2"
+      <h3 class="work-gallery-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2"
           v-motion
           :initial="{ y: 30, opacity: 0 }"
           :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 600 } }">
-        Professional Experience
+        Experienced Gallery
       </h3>
-      <p class="work-gallery-subtitle text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-2"
-         v-motion
-         :initial="{ y: 20, opacity: 0 }"
-         :visible="{ y: 0, opacity: 1, transition: { duration: 800, delay: 700 } }">
-        Showcasing selected work across various organizations and initiatives
-      </p>
       <div class="work-gallery-inner w-full mx-auto px-1 sm:px-0">
         <div v-for="(position, index) in experience"
              :key="index"
