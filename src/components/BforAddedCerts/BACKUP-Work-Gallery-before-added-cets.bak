@@ -42,7 +42,6 @@
           <div class="work-gallery-group__header mb-3 sm:mb-4 md:mb-5">
             <h4 class="work-gallery-group__title text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 dark:text-white mb-1">{{ position.department }}</h4>
             <p class="work-gallery-group__period text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400">{{ position.period }}</p>
-            <a v-if="position.url" :href="position.url" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 underline mt-1 inline-block">Event Highlights</a>
           </div>
           <!-- Photo Gallery -->
           <div v-if="position.photos && position.photos.length > 0" 
@@ -72,84 +71,18 @@
               </div>
             </div>
           </div>
-
-          <!-- Certification -->
-            <button v-if="position.certification"
-              type="button"
-              class="work-gallery-certificate mt-4 flex w-auto items-center gap-3 overflow-hidden rounded-lg border border-purple-200 bg-transparent p-3 text-left shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:border-purple-700 dark:bg-transparent dark:focus:ring-offset-gray-900 sm:mt-5 sm:w-auto sm:min-w-80 mx-auto"
-              :aria-label="`View certification for ${position.department}`"
-              @click="openCertification(position)">
-            <img :src="position.certification"
-                 :alt="`Certification for ${position.department}`"
-                 class="h-16 w-24 flex-none rounded-md bg-gray-100 object-cover dark:bg-gray-700 sm:h-20 sm:w-28">
-            <span class="min-w-0">
-              <span class="block text-xs font-medium uppercase tracking-wider text-purple-600 dark:text-purple-400">Certification</span>
-              <span class="mt-1 block text-sm font-semibold text-gray-800 dark:text-white">Click to view full image</span>
-            </span>
-          </button>
         </div>
       </div>
     </div>
-
-    <Teleport to="body">
-      <transition name="certificate-modal">
-        <div v-if="selectedCertification"
-             class="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-3 backdrop-blur-md sm:p-6"
-             role="dialog"
-             aria-modal="true"
-             :aria-label="`Certification for ${selectedCertification.department}`"
-             @click.self="closeCertification">
-          <button type="button"
-                  class="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-3xl text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white sm:right-6 sm:top-6"
-                  aria-label="Close certification viewer"
-                  @click="closeCertification">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <figure class="flex max-h-full max-w-full flex-col items-center gap-3">
-            <img :src="selectedCertification.certification"
-                 :alt="`Certification for ${selectedCertification.department}`"
-                 class="max-h-[calc(100vh-6rem)] max-w-full rounded-md object-contain shadow-2xl">
-            <figcaption class="max-w-3xl text-center text-sm font-medium text-white sm:text-base">
-              {{ selectedCertification.department }}
-            </figcaption>
-          </figure>
-        </div>
-      </transition>
-    </Teleport>
   </section>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
-
-const certificateUrl = (filename) => `${import.meta.env.BASE_URL}CertificateImages/${filename}`
-const selectedCertification = ref(null)
-
-const openCertification = (position) => {
-  selectedCertification.value = position
-  document.body.style.overflow = 'hidden'
-}
-
-const closeCertification = () => {
-  selectedCertification.value = null
-  document.body.style.overflow = ''
-}
-
-const handleKeydown = (event) => {
-  if (event.key === 'Escape' && selectedCertification.value) {
-    closeCertification()
-  }
-}
-
-onMounted(() => window.addEventListener('keydown', handleKeydown))
-onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-  document.body.style.overflow = ''
-})
+import { ref } from 'vue'
 
 const experience = ref([
   {
-    department: 'Combating Cybercrime - NBI, Cagayan Valley Regional Office',
+    department: 'Combating Cybercrime - National Bureau of Investigation, Cagayan Valley Regional Office',
     period: 'November 2025',
     photos: [
         {
@@ -160,13 +93,11 @@ const experience = ref([
             url: 'https://i.ibb.co/FbHQKhwv/me.jpg',
             description: 'Cybercrime Investigation'
         }
-    ],
-    certification: certificateUrl('DOJ%20.jpg')
+    ]
   },
   {
     department: 'HL7 FHIR RoadSafety Connectathon - Knowledge Management and Information Technology Service',
     period: 'November 2025',
-    url: 'https://web.facebook.com/UPManilaOfficial/posts/pfbid02sbcA631Pffrpy14Qk7Jh1KWKJPFxfhNY2G8bi8rUMMZEXW4FB6ESk37NyTLUGCrCl',
     photos: [
         {
             url: 'https://i.ibb.co/m5rFXz4Z/1.jpg',
@@ -184,13 +115,11 @@ const experience = ref([
             url: 'https://i.ibb.co/4wHqwt3F/2.jpg',
             description: 'API Integration Session'
         }
-    ],
-    certification: certificateUrl('UP-RoadSafety.jpg')
+    ]
   },
   {
     department: 'HL7 FHIR & Immunization Connectathon - Knowledge Management and Information Technology Service',
     period: 'June 2025',
-    url: 'https://web.facebook.com/upmsilab/posts/pfbid08w1v2F1P1meGg8p8McfU5XeJNcMk9fk7EG8vkzd8QVQpWnWpjmmA49pH2r5FbnsPl',
     photos: [
         {
             url: 'https://i.ibb.co/zWfkGw33/Fhir2.jpg',
@@ -216,8 +145,7 @@ const experience = ref([
             url: 'https://i.ibb.co/XkX6Tx90/Connectathon.jpg',
             description: 'Collaborative Development'
         }
-    ],
-    certification: certificateUrl('UNICEF.jpg')
+    ]
   },
 {/* {
     department: 'Regional District Offices – Investigative Services',
@@ -376,16 +304,6 @@ const experience = ref([
 .work-gallery-card__text {
   overflow-wrap: anywhere;
   line-height: 1.35;
-}
-
-.certificate-modal-enter-active,
-.certificate-modal-leave-active {
-  transition: opacity 200ms ease;
-}
-
-.certificate-modal-enter-from,
-.certificate-modal-leave-to {
-  opacity: 0;
 }
 
 /* Ensure gradient and animations stay non-interactive */

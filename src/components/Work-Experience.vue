@@ -60,7 +60,7 @@
                   </div>
                   <div class="min-w-0 flex-1">
                     <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 dark:text-white leading-tight">DEPARTMENT OF HEALTH</h3>
-                    <p class="text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent leading-tight">Information Systems Analyst III / Full Stack Engineer</p>
+                    <p class="text-sm sm:text-base lg:text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent leading-tight">Information Systems Analyst / Full Stack Engineer</p>
                   </div>
                 </div>
                 
@@ -94,7 +94,7 @@
                        :initial="{ x: -20, opacity: 0 }"
                        :visible="{ x: 0, opacity: 1, transition: { duration: 600, delay: 400 } }">
                     <span class="w-2 h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Designed and operated large-scale AI-driven eHealth systems (ICNCDRS, IDTOMIS, ONEISS and a QR-based Document Tracker) to provide secure CRUD operations, workflow automation, analytics dashboards and operational reporting.</span>
+                    <span>Designed and operated large-scale AI-driven eHealth systems to provide secure operations, workflow automation, analytics dashboards and operational reporting.</span>
                   </div>
                   
                   <div class="flex items-start text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
