@@ -238,8 +238,8 @@ const featuredProjects = ref([
     title: 'Zero Balance Billing Dashboard',
     category: 'Healthcare Analytics & Government Dashboard',
     icon: '🏥',
-    description: 'Developed a public Zero Balance Billing dashboard for monitoring Department of Health hospital indicators and No Balance Billing program implementation. The system presents BigQuery-backed metrics, interactive filters, status cards, charts for patient service counts, PhilHealth categories, balance breakdowns, average length of stay, fund sources, disease cases, and fee particular amounts, plus public testimonial submission with admin approval and role-based management.',
-    technologies: ['Laravel 13', 'PHP 8.3+', 'React 19', 'TypeScript', 'Inertia.js', 'Google Cloud BigQuery', 'Tailwind CSS', 'Vite', 'Laravel Fortify', 'Spatie Laravel Permission', 'Axios', 'Recharts'],
+    description: 'Developed the ZBB Dashboard with a user-friendly responsive design that helps the Department of Health monitor and present the results of the Zero Balance Billing program. It shows hospital participation, patients served, healthcare costs, funding sources, common illnesses, and other useful information through charts and summary cards. Visitors can filter the information, generate PDF reports, and submit patient testimonials, while authorized staff can access protected information and administrators can manage users and approve testimonials.',
+    technologies: ['Laravel 13', 'PHP 8.3+', 'React 19', 'TypeScript', 'Inertia.js', 'Google OAuth', 'Google Cloud BigQuery', 'Tailwind CSS', 'Vite', 'Laravel Fortify', 'DomPDF', 'Spatie Laravel Permission', 'Axios', 'Recharts'],
     link: null
   },
   {
