@@ -10,7 +10,7 @@
     ></iframe>
     <button
       type="button"
-      class="pointer-events-auto absolute left-3 top-3 z-20 inline-flex items-center gap-2 rounded-lg border border-white/30 bg-black/70 px-3 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-white"
+      class="pointer-events-auto absolute right-3 top-3 z-20 inline-flex items-center gap-2 rounded-lg border border-white/30 bg-black/70 px-3 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-white"
       :aria-label="isFullscreen ? 'Exit Zero Balance Billing Dashboard fullscreen video' : 'Open Zero Balance Billing Dashboard video in fullscreen'"
       :title="isFullscreen ? 'Exit full view' : 'Full view'"
       @click="toggleFullscreen"
