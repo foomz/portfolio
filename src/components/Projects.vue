@@ -82,6 +82,11 @@
                   <ZBB />
                 </template>
                 
+                <!-- Preview Video Background for eLMIS Dashboard -->
+                <template v-else-if="project.title === 'eLMIS Dashboard - Electronic Logistics Management Information System'">
+                  <ELMIS />
+                </template>
+                
                 <!-- Default design for other projects -->
                 <template v-else>
                   <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-8 flex items-center justify-center h-full min-h-96">
@@ -231,9 +236,18 @@ import IDTOMIS from './Videos/IDTOMIS.vue' // Import the IDTOMIS video component
 import MCU from './Videos/MCU.vue' // Import the MCU video component
 import CiacIS from './Videos/CiacIS.vue' // Import the CiacIS video component
 import FaceRecognition from './Videos/Face-Recognition.vue' // Import the Face Recognition video component
-import ZBB from './Videos/ZBB.vue' // Import the ZBB video component
+import ZBB from './Videos/ZBB.vue' // ImpoZero Balance Billing Dashboardrt the ZBB video component
+import ELMIS from './Videos/ELMIS.vue' // Import eLMIS video component
 
 const featuredProjects = ref([
+  {
+    title: 'eLMIS Dashboard - Electronic Logistics Management Information System',
+    category: 'Healthcare Analytics & Government Dashboard',
+    icon: '🏥',
+    description: 'Developed the eLMIS Dashboard, a responsive web-based analytics portal for monitoring national supply-chain data from Google Cloud BigQuery, including inventory, warehouses, facilities, stock levels, expiry risks, transactions, and user activity. It features interactive charts and live filters, plus a Gemini-powered reporting assistant that converts natural-language questions into validated, read-only BigQuery queries and presents results as metrics, charts, tables, or short-lived PDF reports.',
+    technologies: ['Laravel 13', 'PHP 8.4', 'React 19', 'TypeScript', 'Inertia.js 3', 'Google Cloud BigQuery', 'Google Gemini API', 'Tailwind CSS 4', 'Radix UI', 'Lucide Icons', 'Motion', 'Recharts', 'Laravel Fortify', 'TOTP 2FA', 'WebAuthn Passkeys', 'DomPDF', 'Laravel Wayfinder', 'Vite 8'],
+    link: null
+  },
   {
     title: 'Zero Balance Billing Dashboard',
     category: 'Healthcare Analytics & Government Dashboard',
@@ -320,7 +334,7 @@ const featuredProjects = ref([
     icon: '🧪',
     description: 'Architected and Built the Integrated Drug Test Operation and Management Information System (IDTOMIS) from the ground up, a microservice-based national digital health platform for the Philippine Department of Health supporting the full drug testing lifecycle—from public client registration via E-Gov PH SSO, biometric capture, and encrypted QR code generation to facility-based screening, laboratory workflows, accreditation management, and remote collection permit processing with geolocation and face verification. Architected three independently deployed yet tightly coordinated systems (Client Registry, Core Operations & Accreditation, and RCO Permit Management), each with its own database and bounded context, communicating securely through RESTful APIs. Implemented using Laravel, React, TypeScript, and MySQL, with RBAC, full audit trails, and data-privacy compliance, delivering a scalable, fault-isolated, and fully auditable nationwide platform aligned with government digital transformation standards.',
     technologies: [
-      'PHP 8.2+', 'Laravel 12.x', 'Eloquent ORM', 'MySQL 8+', 'RESTful APIs', 'Spatie Laravel Permission', 'Laravel Fortify', 'Inertia.js 2.0', 'LaraZeus QR', 'Laravel Wayfinder', 'DomPDF', 'PestPHP', 'React 19', 'TypeScript', 'Tailwind CSS 4.0', 'Radix UI', 'Lucide React', 'face-api.js', 'jsQR', 'react-webcam', 'Axios', 'Vite 7+', 'ESLint', 'Prettier', 'TypeScript ESLint', 'Laravel Pint', 'Database Sessions', 'Queue System', 'Comprehensive Logging', 'SMTP Mail', 'RBAC', 'Audit Trail', 'Notifications', 'Activity Logs', 'Dashboard Stats'
+      'PHP 8.2+', 'Laravel 12', 'FastAPI', 'Eloquent ORM', 'MySQL 8+', 'RESTful APIs', 'Spatie Laravel Permission', 'Laravel Fortify', 'Inertia.js 2.0', 'LaraZeus QR', 'Laravel Wayfinder', 'DomPDF', 'PestPHP', 'React 19', 'TypeScript', 'Tailwind CSS 4.0', 'Radix UI', 'Lucide React', 'face-api.js', 'jsQR', 'react-webcam', 'Axios', 'Vite 7+', 'ESLint', 'Prettier', 'TypeScript ESLint', 'Laravel Pint', 'Database Sessions', 'Queue System', 'Comprehensive Logging', 'SMTP Mail', 'RBAC', 'Audit Trail', 'Notifications', 'Activity Logs', 'Dashboard Stats'
     ],
     link: null
   },
