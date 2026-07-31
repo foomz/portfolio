@@ -36,6 +36,19 @@
         </div>
       </div>
 
+      <div class="pointer-events-none absolute inset-x-5 bottom-6 sm:inset-x-8 lg:inset-x-12 lg:bottom-10">
+        <div class="mx-auto flex max-w-screen-2xl items-center gap-3 sm:gap-5">
+          <span class="hidden text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 sm:block">
+            Scroll to explore
+          </span>
+          <div class="h-px flex-1 overflow-hidden bg-white/25">
+            <div class="h-full origin-left bg-cyan-300 will-change-transform" :style="progressStyle" />
+          </div>
+          <span class="w-12 text-right text-xs tabular-nums text-slate-300">
+            {{ displayFrame }}/{{ FRAME_COUNT }}
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +60,7 @@ const FRAME_COUNT = 48
 const sequenceEl = ref(null)
 const canvasEl = ref(null)
 const loadedFrames = ref(0)
+const scrollProgress = ref(0)
 const displayFrame = ref(1)
 const frames = Array.from({ length: FRAME_COUNT }, () => null)
 
@@ -56,6 +70,7 @@ let resizeObserver = null
 let destroyed = false
 
 const loadPercent = computed(() => Math.round((loadedFrames.value / FRAME_COUNT) * 100))
+const progressStyle = computed(() => ({ transform: `scaleX(${scrollProgress.value})` }))
 const frameSource = (index) => `${import.meta.env.BASE_URL}WorkExperienceFrames/ezgif-frame-${String(index + 1).padStart(3, '0')}.png`
 
 function resizeCanvas() {
@@ -112,6 +127,7 @@ function updateFromScroll() {
   const progress = Math.min(Math.max(-bounds.top / scrollDistance, 0), 1)
   const framePosition = progress * (FRAME_COUNT - 1)
 
+  scrollProgress.value = progress
   displayFrame.value = Math.min(Math.floor(framePosition) + 1, FRAME_COUNT)
   renderFrame(framePosition)
 }

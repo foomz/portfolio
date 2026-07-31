@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full min-w-0 overflow-x-hidden bg-gray-200 text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" @contextmenu.prevent>
+  <div class="min-h-screen w-full min-w-0 overflow-x-clip bg-gray-200 text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" @contextmenu.prevent>
     <!-- Loading Spinner -->
     <Spinner :isLoading="isLoading" />
 
@@ -74,7 +74,7 @@
       </div>
     </nav>
 
-    <main class="w-full min-w-0 overflow-x-hidden pt-14 sm:pt-16 lg:pt-[4.5rem] xl:pt-20">
+    <main class="w-full min-w-0 overflow-x-clip pt-14 sm:pt-16 lg:pt-[4.5rem] xl:pt-20">
         <!-- Hero Profile Section -->
         <Profile data-nav-section="profile" /> <!-- Render the Profile Component -->
 
