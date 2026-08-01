@@ -200,10 +200,10 @@ const nbiResponsibilities = [
   'Managed data-center infrastructure, regional technical support, network diagnostics, and security monitoring.'
 ]
 const nbiAssignments = [
-  'Digital Forensics Lab · 2018',
-  'Cybercrime · 2018–2022',
-  'Technology Infrastructure · 2022–2024',
-  'Regional Offices · 2024'
+  'Digital Forensics Laboratory · 2018',
+  'Cybercrime Division· 2018–2022',
+  'Technology Infrastructure Division · 2022–2024',
+  'Regional District Offices · 2024'
 ]
 const nbiTechnologies = ['Digital Forensics', 'Cybercrime', 'OSINT', 'Network Security', 'System Administration', 'Incident Response']
 let context = null
