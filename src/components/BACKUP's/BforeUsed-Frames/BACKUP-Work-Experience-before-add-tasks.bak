@@ -1,0 +1,212 @@
+<template>
+  <div ref="sequenceEl" class="work-sequence relative bg-slate-950 text-white">
+    <div class="sequence-sticky sticky top-0 overflow-hidden bg-slate-950">
+      <canvas
+        ref="canvasEl"
+        class="absolute inset-0 block h-full w-full"
+        role="img"
+        :aria-label="`Work experience animation, frame ${displayFrame} of ${FRAME_COUNT}`"
+      />
+
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/75" />
+
+      <!-- Header content Display within frames 2-9 with Transition Effect-->
+      <Transition name="career-heading">
+        <div
+          v-if="displayFrame >= 2 && displayFrame <= 9"
+          class="pointer-events-none absolute inset-x-0 top-0 mx-auto w-full max-w-screen-2xl px-5 pt-8 sm:px-8 sm:pt-12 lg:px-12 lg:pt-16"
+        >
+          <p class="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300 sm:text-sm">
+            Career journey
+          </p>
+          <h2 class="mt-2 max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            Work Experience
+          </h2>
+          <p class="mt-3 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
+            Scroll through the story behind the systems, services, and solutions I build.
+          </p>
+        </div>
+      </Transition>
+
+      <div
+        v-if="loadedFrames < FRAME_COUNT"
+        class="absolute inset-0 z-10 grid place-items-center bg-slate-950"
+        aria-live="polite"
+      >
+        <div class="w-56 text-center">
+          <p class="text-sm font-medium text-slate-200">Loading work experience</p>
+          <div class="mt-3 h-1 overflow-hidden rounded-full bg-white/15">
+            <div class="h-full rounded-full bg-cyan-300 transition-[width] duration-200" :style="{ width: `${loadPercent}%` }" />
+          </div>
+          <p class="mt-2 text-xs tabular-nums text-slate-400">{{ loadPercent }}%</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+
+const FRAME_COUNT = 48
+const sequenceEl = ref(null)
+const canvasEl = ref(null)
+const loadedFrames = ref(0)
+const displayFrame = ref(1)
+const frames = Array.from({ length: FRAME_COUNT }, () => null)
+
+let context = null
+let rafId = 0
+let resizeObserver = null
+let destroyed = false
+
+const loadPercent = computed(() => Math.round((loadedFrames.value / FRAME_COUNT) * 100))
+const frameSource = (index) => `${import.meta.env.BASE_URL}WorkExperienceFrames/ezgif-frame-${String(index + 1).padStart(3, '0')}.png`
+
+function resizeCanvas() {
+  if (!canvasEl.value) return
+
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
+  const width = Math.max(1, Math.round(canvasEl.value.clientWidth * pixelRatio))
+  const height = Math.max(1, Math.round(canvasEl.value.clientHeight * pixelRatio))
+
+  if (canvasEl.value.width !== width || canvasEl.value.height !== height) {
+    canvasEl.value.width = width
+    canvasEl.value.height = height
+  }
+}
+
+function drawCover(image, opacity = 1) {
+  if (!image?.complete || !image.naturalWidth || !context || !canvasEl.value) return
+
+  const canvasWidth = canvasEl.value.width
+  const canvasHeight = canvasEl.value.height
+  const scale = Math.max(canvasWidth / image.naturalWidth, canvasHeight / image.naturalHeight)
+  const width = image.naturalWidth * scale
+  const height = image.naturalHeight * scale
+
+  context.globalAlpha = opacity
+  context.drawImage(image, (canvasWidth - width) / 2, (canvasHeight - height) / 2, width, height)
+}
+
+function renderFrame(position) {
+  if (!context || !canvasEl.value) return
+
+  const firstIndex = Math.min(Math.floor(position), FRAME_COUNT - 1)
+  const secondIndex = Math.min(firstIndex + 1, FRAME_COUNT - 1)
+  const blend = position - firstIndex
+
+  context.globalAlpha = 1
+  context.fillStyle = '#020617'
+  context.fillRect(0, 0, canvasEl.value.width, canvasEl.value.height)
+  drawCover(frames[firstIndex])
+
+  if (secondIndex !== firstIndex && frames[secondIndex]?.complete) {
+    drawCover(frames[secondIndex], blend)
+  }
+
+  context.globalAlpha = 1
+}
+
+function updateFromScroll() {
+  rafId = 0
+  if (!sequenceEl.value) return
+
+  const bounds = sequenceEl.value.getBoundingClientRect()
+  const scrollDistance = Math.max(sequenceEl.value.offsetHeight - window.innerHeight, 1)
+  const progress = Math.min(Math.max(-bounds.top / scrollDistance, 0), 1)
+  const framePosition = progress * (FRAME_COUNT - 1)
+
+  displayFrame.value = Math.min(Math.floor(framePosition) + 1, FRAME_COUNT)
+  renderFrame(framePosition)
+}
+
+function scheduleUpdate() {
+  if (!rafId) rafId = window.requestAnimationFrame(updateFromScroll)
+}
+
+function preloadFrames() {
+  for (let index = 0; index < FRAME_COUNT; index += 1) {
+    const image = new Image()
+    image.decoding = 'async'
+    frames[index] = image
+
+    image.onload = () => {
+      if (destroyed) return
+      loadedFrames.value += 1
+      scheduleUpdate()
+    }
+
+    image.onerror = () => {
+      if (!destroyed) loadedFrames.value += 1
+    }
+
+    image.src = frameSource(index)
+  }
+}
+
+onMounted(async () => {
+  await nextTick()
+  context = canvasEl.value.getContext('2d', { alpha: false, desynchronized: true })
+  resizeCanvas()
+  preloadFrames()
+
+  resizeObserver = new ResizeObserver(() => {
+    resizeCanvas()
+    scheduleUpdate()
+  })
+  resizeObserver.observe(canvasEl.value)
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true })
+  scheduleUpdate()
+})
+
+onBeforeUnmount(() => {
+  destroyed = true
+  window.removeEventListener('scroll', scheduleUpdate)
+  resizeObserver?.disconnect()
+  if (rafId) window.cancelAnimationFrame(rafId)
+
+  frames.forEach((image) => {
+    if (!image) return
+    image.onload = null
+    image.onerror = null
+  })
+})
+</script>
+
+<style scoped>
+.work-sequence {
+  height: 500vh;
+  height: 500svh;
+  isolation: isolate;
+}
+
+.sequence-sticky {
+  height: 100vh;
+  height: 100svh;
+}
+
+.career-heading-enter-active,
+.career-heading-leave-active {
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.career-heading-enter-from,
+.career-heading-leave-to {
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-sequence {
+    height: 100svh;
+  }
+
+  .career-heading-enter-active,
+  .career-heading-leave-active {
+    transition: none;
+  }
+}
+</style>
